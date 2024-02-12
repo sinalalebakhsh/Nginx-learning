@@ -234,23 +234,92 @@ Output: should be shows anything!!
 https://www.nginx.org/en/docs/dirindex.html
 ===================================================
 28-
+ls -ltr /etc/nginx/sites-enabled/
+
+Output:
+    total 0
+    lrwxrwxrwx 1 root root 34 Feb 12 13:27 default -> /etc/nginx/sites-available/default
 ===================================================
 29-
+unlink /etc/nginx/sites-enabled/default
 ===================================================
 30-
+ls -ltr /etc/nginx/sites-available/
+
+Output:
+    total 4
+    -rw-r--r-- 1 root root 2412 May 30  2023 default
 ===================================================
 31-
+vim /etc/nginx/conf.d/binaryville.conf
 ===================================================
-32-
+32- Press "I" key for Insert mode
+i
+
+Output: in bottom screen:
+-- INSERT --  
 ===================================================
-33-
+33- write
+server {
+    listen 80;
+    root /var/www/binaryville;
+}
 ===================================================
+34- Press "Esc" key
 ===================================================
+35- write
+:wq
+than hit the Enter button
 ===================================================
+36-
+cat /etc/nginx/conf.d/binaryville.conf
+
+Output:
+    server {
+        listen 80;
+        root /var/www/binaryville;
+    }
 ===================================================
+37- Test the configuration
+nginx -t
+
+Output:
+    nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+    nginx: configuration file /etc/nginx/nginx.conf test is successful
 ===================================================
+38-
+systemctl reload nginx
 ===================================================
+39-
+systemctl status nginx
 ===================================================
+40-
+mkdir -p /var/www/binaryville
+===================================================
+41- Let's put a test file in that directory
+echo "My name is Sina LalehBakhsh from Earth." > /var/www/binaryville/index.html
+===================================================
+42- Go to your IP/Server/WebSite/  and check changes
+===================================================
+43-
+===================================================
+44-
+===================================================
+45-
+===================================================
+46-
+===================================================
+47-
+===================================================
+48-
+===================================================
+49-
+===================================================
+50-
+===================================================
+51-
+===================================================
+52-
 ===================================================
 ===================================================
 ===================================================
