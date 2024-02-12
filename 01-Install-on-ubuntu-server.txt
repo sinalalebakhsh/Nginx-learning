@@ -1,0 +1,141 @@
+1- 
+apt update
+===================================================
+2-
+apt install nginx
+===================================================
+3-
+apt update
+apt upgrade
+apt update
+===================================================
+4-
+nginx -v
+
+Output:
+nginx version: nginx/1.18.0 (Ubuntu)
+===================================================
+5-
+systemctl status nginx
+
+Output:
+    ● nginx.service - A high performance web server and a reverse proxy server
+        Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+        Active: active (running) since Mon 2024-02-12 13:37:53 UTC; 1min 40s ago
+        ...
+        ...
+===================================================
+6- Go in browser than link your website/IP/VPS,etc 
+should see default page NginX
+===================================================
+7-
+systemctl status nginx --no-pager
+
+Output:
+    ● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+     Active: active (running) since Mon 2024-02-12 13:37:53 UTC; 10min ago
+    ...
+    ...
+===================================================
+8-
+systemctl stop nginx
+===================================================
+9-
+systemctl status nginx
+
+Output:
+    ○ nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+     Active: inactive (dead) since Mon 2024-02-12 13:50:17 UTC; 4s ago
+     ...
+     ...
+===================================================
+10-
+systemctl start nginx
+===================================================
+11-
+systemctl status nginx
+
+Output:
+    ● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+     Active: active (running) since Mon 2024-02-12 13:52:47 UTC; 34s ago
+     ...
+     ... 
+===================================================
+12-
+nginx -h
+
+Output:
+    nginx version: nginx/1.18.0 (Ubuntu)
+Usage: nginx [-?hvVtTq] [-s signal] [-c filename] [-p prefix] [-g directives]
+
+Options:
+  -?,-h         : this help
+  -v            : show version and exit
+  -V            : show version and configure options then exit
+  -t            : test configuration and exit
+  -T            : test configuration, dump it and exit
+  -q            : suppress non-error messages during configuration testing
+  -s signal     : send signal to a master process: stop, quit, reopen, reload
+  -p prefix     : set prefix path (default: /usr/share/nginx/)
+  -c filename   : set configuration file (default: /etc/nginx/nginx.conf)
+  -g directives : set global directives out of configuration file
+===================================================
+13-
+nginx -t
+
+Output:
+    nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+    nginx: configuration file /etc/nginx/nginx.conf test is successful
+===================================================
+14-
+nginx -T
+
+Output:
+    nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+    nginx: configuration file /etc/nginx/nginx.conf test is successful
+    # configuration file /etc/nginx/nginx.conf:
+    ...
+    ...
+===================================================
+15-
+cd /etc/nginx
+Thank
+ls
+
+Output:
+    conf.d        fastcgi_params  koi-win     modules-available  nginx.conf
+    ...
+    ...
+===================================================
+16-
+more nginx.conf
+
+Output:
+    user www-data;
+    worker_processes auto;
+    ...
+    ...
+    --More--(40%)
+===================================================
+17-
+===================================================
+18-
+===================================================
+19-
+===================================================
+20-
+===================================================
+===================================================
+===================================================
+===================================================
+===================================================
+===================================================
+===================================================
+===================================================
+===================================================
+
+
+
