@@ -331,6 +331,11 @@ curl localhost
 Output: content in index.html, for main is
     My name is Sina LalehBakhsh from Earth.
 ===================================================
+Source these commands
+    https://github.com/LinkedInLearning/learning-nginx-2492317/tree/d4220816275d6b732f1a750a5f384f6e11c68dcc/Ch01/01_08-add-files-to-the-root-directory
+    OR
+    https://github.com/AcronProjectGroup/learning-nginx-2492317/tree/main/Ch01/01_08-add-files-to-the-root-directory
+===================================================
 49-
 cd /root
 ===================================================
@@ -346,6 +351,108 @@ OR
 git clone https://github.com/LinkedInLearning/learning-nginx-2492317.git
 ===================================================
 52-
+ls learning-nginx-2492317/
+
+Output:
+    Binaryville_robot_website_LIL_107684.tgz  Ch00  Ch02  Ch04  Ch06             LICENSE  README.md
+    Binaryville_robot_website_LIL_107684.zip  Ch01  Ch03  Ch05  CONTRIBUTING.md  NOTICE
+===================================================
+53-
+tar xvf ~/learning-nginx-2492317/Binaryville_robot_website_LIL_107684.tgz --directory /var/www/binaryville/
+===================================================
+54-
+ls /var/www/binaryville/
+
+Output:
+    403.html  50x.html  account  blog  checkout  humans.txt  index.html  README.rtf  shop
+    404.html  about     assets   cart  contact   images      private     robots.txt  _style-guide
+===================================================
+Location Directive
+    server {
+        location [modifier] location_definition {
+            ...
+        location [modifier] location_definition {
+            ...
+        }
+        }
+    }
+===================================================
+===================================================
+Location Modifiers
+Modifier    Application to Location Definitions
+--------    ------------------------------------
+  None      The location definition is interpreted as a prefix for the URI
+  =         The URI must be ab exact match to the location definition
+  ~         The location definition is used as a case-sensitive regular expression
+  ~*        The location definition is used as a case-insensitive regular expression
+  ^~        If the longest prefix matches, then no regular expression are checked
+===================================================
+===================================================
+
+See this file >> 016- Location Processing.png
+
+===================================================
+===================================================
+55-
+cd /root/learning-nginx-2492417/Ch02/02_03-configure-locations-part-2
+===================================================
+56-
+pwd
+
+Output:
+    /root/learning-nginx-2492317/Ch02/02_03-configure-locations-part-2
+===================================================
+57-
+view binaryville.conf
+===================================================
+58- write this and hit Enter
+:set number
+===================================================
+59- write this and hit Enter
+:8
+===================================================
+60- write this and hit Enter
+:11
+than
+:q
+===================================================
+61-
+cp binaryville.conf /etc/nginx/conf.d/
+===================================================
+62-
+nginx -t
+
+Output:
+    nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+    nginx: configuration file /etc/nginx/nginx.conf test is successful
+===================================================
+63-
+systemctl reload nginx
+===================================================
+64- go to your IP/Server/Websiter , should be shows index of /mages/
+http://143.78.96.952/images/
+===================================================
+65- 
+===================================================
+66-
+===================================================
+67-
+===================================================
+68-
+===================================================
+69-
+===================================================
+70-
+===================================================
+71-
+===================================================
+72-
+===================================================
+73-
+===================================================
+74-
+===================================================
+===================================================
 ===================================================
 ===================================================
 ===================================================
