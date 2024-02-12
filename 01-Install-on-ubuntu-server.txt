@@ -224,8 +224,14 @@ Output:
     default
 ===================================================
 26-
+cd ../conf.d/
+than
+ls
+
+Output: should be shows anything!!
 ===================================================
-27-
+27- Look at "009-Inside nginx conf.png" link
+https://www.nginx.org/en/docs/dirindex.html
 ===================================================
 28-
 ===================================================

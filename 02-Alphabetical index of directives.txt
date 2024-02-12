@@ -1,0 +1,850 @@
+Source:
+    https://nginx.org/en/docs/dirindex.html
+
+
+=======================================================
+                
+                Important Content
+
+=======================================================
+
+absolute_redirect
+accept_mutex
+accept_mutex_delay
+access_log (ngx_http_log_module)
+access_log (ngx_stream_log_module)
+add_after_body
+add_before_body
+add_header
+add_trailer
+addition_types
+aio
+aio_write
+alias
+allow (ngx_http_access_module)
+allow (ngx_stream_access_module)
+ancient_browser
+ancient_browser_value
+api
+auth_basic
+auth_basic_user_file
+auth_delay
+auth_http
+auth_http_header
+auth_http_pass_client_cert
+auth_http_timeout
+auth_jwt
+auth_jwt_claim_set
+auth_jwt_header_set
+auth_jwt_key_cache
+auth_jwt_key_file
+auth_jwt_key_request
+auth_jwt_leeway
+auth_jwt_require
+auth_jwt_type
+auth_request
+auth_request_set
+autoindex
+autoindex_exact_size
+autoindex_format
+autoindex_localtime
+break
+charset
+charset_map
+charset_types
+chunked_transfer_encoding
+client_body_buffer_size
+client_body_in_file_only
+client_body_in_single_buffer
+client_body_temp_path
+client_body_timeout
+client_header_buffer_size
+client_header_timeout
+client_max_body_size
+connect_timeout
+connection_pool_size
+create_full_put_path
+daemon
+dav_access
+dav_methods
+debug_connection
+debug_points
+default_type
+deny (ngx_http_access_module)
+deny (ngx_stream_access_module)
+directio
+directio_alignment
+disable_symlinks
+empty_gif
+env
+error_log
+error_page
+etag
+events
+expires
+f4f
+f4f_buffer_size
+fastcgi_bind
+fastcgi_buffer_size
+fastcgi_buffering
+fastcgi_buffers
+fastcgi_busy_buffers_size
+fastcgi_cache
+fastcgi_cache_background_update
+fastcgi_cache_bypass
+fastcgi_cache_key
+fastcgi_cache_lock
+fastcgi_cache_lock_age
+fastcgi_cache_lock_timeout
+fastcgi_cache_max_range_offset
+fastcgi_cache_methods
+fastcgi_cache_min_uses
+fastcgi_cache_path
+fastcgi_cache_purge
+fastcgi_cache_revalidate
+fastcgi_cache_use_stale
+fastcgi_cache_valid
+fastcgi_catch_stderr
+fastcgi_connect_timeout
+fastcgi_force_ranges
+fastcgi_hide_header
+fastcgi_ignore_client_abort
+fastcgi_ignore_headers
+fastcgi_index
+fastcgi_intercept_errors
+fastcgi_keep_conn
+fastcgi_limit_rate
+fastcgi_max_temp_file_size
+fastcgi_next_upstream
+fastcgi_next_upstream_timeout
+fastcgi_next_upstream_tries
+fastcgi_no_cache
+fastcgi_param
+fastcgi_pass
+fastcgi_pass_header
+fastcgi_pass_request_body
+fastcgi_pass_request_headers
+fastcgi_read_timeout
+fastcgi_request_buffering
+fastcgi_send_lowat
+fastcgi_send_timeout
+fastcgi_socket_keepalive
+fastcgi_split_path_info
+fastcgi_store
+fastcgi_store_access
+fastcgi_temp_file_write_size
+fastcgi_temp_path
+flv
+geo (ngx_http_geo_module)
+geo (ngx_stream_geo_module)
+geoip_city (ngx_http_geoip_module)
+geoip_city (ngx_stream_geoip_module)
+geoip_country (ngx_http_geoip_module)
+geoip_country (ngx_stream_geoip_module)
+geoip_org (ngx_http_geoip_module)
+geoip_org (ngx_stream_geoip_module)
+geoip_proxy
+geoip_proxy_recursive
+google_perftools_profiles
+grpc_bind
+grpc_buffer_size
+grpc_connect_timeout
+grpc_hide_header
+grpc_ignore_headers
+grpc_intercept_errors
+grpc_next_upstream
+grpc_next_upstream_timeout
+grpc_next_upstream_tries
+grpc_pass
+grpc_pass_header
+grpc_read_timeout
+grpc_send_timeout
+grpc_set_header
+grpc_socket_keepalive
+grpc_ssl_certificate
+grpc_ssl_certificate_key
+grpc_ssl_ciphers
+grpc_ssl_conf_command
+grpc_ssl_crl
+grpc_ssl_name
+grpc_ssl_password_file
+grpc_ssl_protocols
+grpc_ssl_server_name
+grpc_ssl_session_reuse
+grpc_ssl_trusted_certificate
+grpc_ssl_verify
+grpc_ssl_verify_depth
+gunzip
+gunzip_buffers
+gzip
+gzip_buffers
+gzip_comp_level
+gzip_disable
+gzip_http_version
+gzip_min_length
+gzip_proxied
+gzip_static
+gzip_types
+gzip_vary
+hash (ngx_http_upstream_module)
+hash (ngx_stream_upstream_module)
+health_check (ngx_http_upstream_hc_module)
+health_check (ngx_stream_upstream_hc_module)
+health_check_timeout
+hls
+hls_buffers
+hls_forward_args
+hls_fragment
+hls_mp4_buffer_size
+hls_mp4_max_buffer_size
+http
+http2
+http2_body_preread_size
+http2_chunk_size
+http2_idle_timeout
+http2_max_concurrent_pushes
+http2_max_concurrent_streams
+http2_max_field_size
+http2_max_header_size
+http2_max_requests
+http2_push
+http2_push_preload
+http2_recv_buffer_size
+http2_recv_timeout
+http3
+http3_hq
+http3_max_concurrent_streams
+http3_stream_buffer_size
+if
+if_modified_since
+ignore_invalid_headers
+image_filter
+image_filter_buffer
+image_filter_interlace
+image_filter_jpeg_quality
+image_filter_sharpen
+image_filter_transparency
+image_filter_webp_quality
+imap_auth
+imap_capabilities
+imap_client_buffer
+include
+index
+internal
+internal_redirect
+ip_hash
+js_access
+js_body_filter
+js_content
+js_fetch_buffer_size (ngx_http_js_module)
+js_fetch_buffer_size (ngx_stream_js_module)
+js_fetch_ciphers (ngx_http_js_module)
+js_fetch_ciphers (ngx_stream_js_module)
+js_fetch_max_response_buffer_size (ngx_http_js_module)
+js_fetch_max_response_buffer_size (ngx_stream_js_module)
+js_fetch_protocols (ngx_http_js_module)
+js_fetch_protocols (ngx_stream_js_module)
+js_fetch_timeout (ngx_http_js_module)
+js_fetch_timeout (ngx_stream_js_module)
+js_fetch_trusted_certificate (ngx_http_js_module)
+js_fetch_trusted_certificate (ngx_stream_js_module)
+js_fetch_verify (ngx_http_js_module)
+js_fetch_verify (ngx_stream_js_module)
+js_fetch_verify_depth (ngx_http_js_module)
+js_fetch_verify_depth (ngx_stream_js_module)
+js_filter
+js_header_filter
+js_import (ngx_http_js_module)
+js_import (ngx_stream_js_module)
+js_include (ngx_http_js_module)
+js_include (ngx_stream_js_module)
+js_path (ngx_http_js_module)
+js_path (ngx_stream_js_module)
+js_periodic (ngx_http_js_module)
+js_periodic (ngx_stream_js_module)
+js_preload_object (ngx_http_js_module)
+js_preload_object (ngx_stream_js_module)
+js_preread
+js_set (ngx_http_js_module)
+js_set (ngx_stream_js_module)
+js_shared_dict_zone (ngx_http_js_module)
+js_shared_dict_zone (ngx_stream_js_module)
+js_var (ngx_http_js_module)
+js_var (ngx_stream_js_module)
+keepalive
+keepalive_disable
+keepalive_requests (ngx_http_core_module)
+keepalive_requests (ngx_http_upstream_module)
+keepalive_time (ngx_http_core_module)
+keepalive_time (ngx_http_upstream_module)
+keepalive_timeout (ngx_http_core_module)
+keepalive_timeout (ngx_http_upstream_module)
+keyval (ngx_http_keyval_module)
+keyval (ngx_stream_keyval_module)
+keyval_zone (ngx_http_keyval_module)
+keyval_zone (ngx_stream_keyval_module)
+large_client_header_buffers
+least_conn (ngx_http_upstream_module)
+least_conn (ngx_stream_upstream_module)
+least_time (ngx_http_upstream_module)
+least_time (ngx_stream_upstream_module)
+limit_conn (ngx_http_limit_conn_module)
+limit_conn (ngx_stream_limit_conn_module)
+limit_conn_dry_run (ngx_http_limit_conn_module)
+limit_conn_dry_run (ngx_stream_limit_conn_module)
+limit_conn_log_level (ngx_http_limit_conn_module)
+limit_conn_log_level (ngx_stream_limit_conn_module)
+limit_conn_status
+limit_conn_zone (ngx_http_limit_conn_module)
+limit_conn_zone (ngx_stream_limit_conn_module)
+limit_except
+limit_rate
+limit_rate_after
+limit_req
+limit_req_dry_run
+limit_req_log_level
+limit_req_status
+limit_req_zone
+limit_zone
+lingering_close
+lingering_time
+lingering_timeout
+listen (ngx_http_core_module)
+listen (ngx_mail_core_module)
+listen (ngx_stream_core_module)
+load_module
+location
+lock_file
+log_format (ngx_http_log_module)
+log_format (ngx_stream_log_module)
+log_not_found
+log_subrequest
+mail
+map (ngx_http_map_module)
+map (ngx_stream_map_module)
+map_hash_bucket_size (ngx_http_map_module)
+map_hash_bucket_size (ngx_stream_map_module)
+map_hash_max_size (ngx_http_map_module)
+map_hash_max_size (ngx_stream_map_module)
+master_process
+match (ngx_http_upstream_hc_module)
+match (ngx_stream_upstream_hc_module)
+max_errors
+max_ranges
+memcached_bind
+memcached_buffer_size
+memcached_connect_timeout
+memcached_gzip_flag
+memcached_next_upstream
+memcached_next_upstream_timeout
+memcached_next_upstream_tries
+memcached_pass
+memcached_read_timeout
+memcached_send_timeout
+memcached_socket_keepalive
+merge_slashes
+mgmt
+min_delete_depth
+mirror
+mirror_request_body
+modern_browser
+modern_browser_value
+mp4
+mp4_buffer_size
+mp4_limit_rate
+mp4_limit_rate_after
+mp4_max_buffer_size
+mp4_start_key_frame
+mqtt
+mqtt_buffers
+mqtt_preread
+mqtt_rewrite_buffer_size
+mqtt_set_connect
+msie_padding
+msie_refresh
+multi_accept
+ntlm
+open_file_cache
+open_file_cache_errors
+open_file_cache_min_uses
+open_file_cache_valid
+open_log_file_cache (ngx_http_log_module)
+open_log_file_cache (ngx_stream_log_module)
+otel_exporter
+otel_service_name
+otel_span_attr
+otel_span_name
+otel_trace
+otel_trace_context
+output_buffers
+override_charset
+pcre_jit
+perl
+perl_modules
+perl_require
+perl_set
+pid
+pop3_auth
+pop3_capabilities
+port_in_redirect
+postpone_output
+preread_buffer_size
+preread_timeout
+protocol
+proxy_bind (ngx_http_proxy_module)
+proxy_bind (ngx_stream_proxy_module)
+proxy_buffer
+proxy_buffer_size (ngx_http_proxy_module)
+proxy_buffer_size (ngx_stream_proxy_module)
+proxy_buffering
+proxy_buffers
+proxy_busy_buffers_size
+proxy_cache
+proxy_cache_background_update
+proxy_cache_bypass
+proxy_cache_convert_head
+proxy_cache_key
+proxy_cache_lock
+proxy_cache_lock_age
+proxy_cache_lock_timeout
+proxy_cache_max_range_offset
+proxy_cache_methods
+proxy_cache_min_uses
+proxy_cache_path
+proxy_cache_purge
+proxy_cache_revalidate
+proxy_cache_use_stale
+proxy_cache_valid
+proxy_connect_timeout (ngx_http_proxy_module)
+proxy_connect_timeout (ngx_stream_proxy_module)
+proxy_cookie_domain
+proxy_cookie_flags
+proxy_cookie_path
+proxy_download_rate
+proxy_force_ranges
+proxy_half_close
+proxy_headers_hash_bucket_size
+proxy_headers_hash_max_size
+proxy_hide_header
+proxy_http_version
+proxy_ignore_client_abort
+proxy_ignore_headers
+proxy_intercept_errors
+proxy_limit_rate
+proxy_max_temp_file_size
+proxy_method
+proxy_next_upstream (ngx_http_proxy_module)
+proxy_next_upstream (ngx_stream_proxy_module)
+proxy_next_upstream_timeout (ngx_http_proxy_module)
+proxy_next_upstream_timeout (ngx_stream_proxy_module)
+proxy_next_upstream_tries (ngx_http_proxy_module)
+proxy_next_upstream_tries (ngx_stream_proxy_module)
+proxy_no_cache
+proxy_pass (ngx_http_proxy_module)
+proxy_pass (ngx_stream_proxy_module)
+proxy_pass_error_message
+proxy_pass_header
+proxy_pass_request_body
+proxy_pass_request_headers
+proxy_protocol (ngx_mail_proxy_module)
+proxy_protocol (ngx_stream_proxy_module)
+proxy_protocol_timeout
+proxy_read_timeout
+proxy_redirect
+proxy_request_buffering
+proxy_requests
+proxy_responses
+proxy_send_lowat
+proxy_send_timeout
+proxy_session_drop
+proxy_set_body
+proxy_set_header
+proxy_smtp_auth
+proxy_socket_keepalive (ngx_http_proxy_module)
+proxy_socket_keepalive (ngx_stream_proxy_module)
+proxy_ssl
+proxy_ssl_certificate (ngx_http_proxy_module)
+proxy_ssl_certificate (ngx_stream_proxy_module)
+proxy_ssl_certificate_key (ngx_http_proxy_module)
+proxy_ssl_certificate_key (ngx_stream_proxy_module)
+proxy_ssl_ciphers (ngx_http_proxy_module)
+proxy_ssl_ciphers (ngx_stream_proxy_module)
+proxy_ssl_conf_command (ngx_http_proxy_module)
+proxy_ssl_conf_command (ngx_stream_proxy_module)
+proxy_ssl_crl (ngx_http_proxy_module)
+proxy_ssl_crl (ngx_stream_proxy_module)
+proxy_ssl_name (ngx_http_proxy_module)
+proxy_ssl_name (ngx_stream_proxy_module)
+proxy_ssl_password_file (ngx_http_proxy_module)
+proxy_ssl_password_file (ngx_stream_proxy_module)
+proxy_ssl_protocols (ngx_http_proxy_module)
+proxy_ssl_protocols (ngx_stream_proxy_module)
+proxy_ssl_server_name (ngx_http_proxy_module)
+proxy_ssl_server_name (ngx_stream_proxy_module)
+proxy_ssl_session_reuse (ngx_http_proxy_module)
+proxy_ssl_session_reuse (ngx_stream_proxy_module)
+proxy_ssl_trusted_certificate (ngx_http_proxy_module)
+proxy_ssl_trusted_certificate (ngx_stream_proxy_module)
+proxy_ssl_verify (ngx_http_proxy_module)
+proxy_ssl_verify (ngx_stream_proxy_module)
+proxy_ssl_verify_depth (ngx_http_proxy_module)
+proxy_ssl_verify_depth (ngx_stream_proxy_module)
+proxy_store
+proxy_store_access
+proxy_temp_file_write_size
+proxy_temp_path
+proxy_timeout (ngx_mail_proxy_module)
+proxy_timeout (ngx_stream_proxy_module)
+proxy_upload_rate
+queue
+quic_active_connection_id_limit
+quic_bpf
+quic_gso
+quic_host_key
+quic_retry
+random (ngx_http_upstream_module)
+random (ngx_stream_upstream_module)
+random_index
+read_ahead
+read_timeout
+real_ip_header
+real_ip_recursive
+recursive_error_pages
+referer_hash_bucket_size
+referer_hash_max_size
+request_pool_size
+reset_timedout_connection
+resolver (ngx_http_core_module)
+resolver (ngx_http_upstream_module)
+resolver (ngx_mail_core_module)
+resolver (ngx_stream_core_module)
+resolver (ngx_stream_upstream_module)
+resolver (ngx_mgmt_module)
+resolver_timeout (ngx_http_core_module)
+resolver_timeout (ngx_http_upstream_module)
+resolver_timeout (ngx_mail_core_module)
+resolver_timeout (ngx_stream_core_module)
+resolver_timeout (ngx_stream_upstream_module)
+resolver_timeout (ngx_mgmt_module)
+return (ngx_http_rewrite_module)
+return (ngx_stream_return_module)
+rewrite
+rewrite_log
+root
+satisfy
+scgi_bind
+scgi_buffer_size
+scgi_buffering
+scgi_buffers
+scgi_busy_buffers_size
+scgi_cache
+scgi_cache_background_update
+scgi_cache_bypass
+scgi_cache_key
+scgi_cache_lock
+scgi_cache_lock_age
+scgi_cache_lock_timeout
+scgi_cache_max_range_offset
+scgi_cache_methods
+scgi_cache_min_uses
+scgi_cache_path
+scgi_cache_purge
+scgi_cache_revalidate
+scgi_cache_use_stale
+scgi_cache_valid
+scgi_connect_timeout
+scgi_force_ranges
+scgi_hide_header
+scgi_ignore_client_abort
+scgi_ignore_headers
+scgi_intercept_errors
+scgi_limit_rate
+scgi_max_temp_file_size
+scgi_next_upstream
+scgi_next_upstream_timeout
+scgi_next_upstream_tries
+scgi_no_cache
+scgi_param
+scgi_pass
+scgi_pass_header
+scgi_pass_request_body
+scgi_pass_request_headers
+scgi_read_timeout
+scgi_request_buffering
+scgi_send_timeout
+scgi_socket_keepalive
+scgi_store
+scgi_store_access
+scgi_temp_file_write_size
+scgi_temp_path
+secure_link
+secure_link_md5
+secure_link_secret
+send_lowat
+send_timeout (ngx_http_core_module)
+send_timeout (ngx_mgmt_module)
+sendfile
+sendfile_max_chunk
+server (ngx_http_core_module)
+server (ngx_http_upstream_module)
+server (ngx_mail_core_module)
+server (ngx_stream_core_module)
+server (ngx_stream_upstream_module)
+server_name (ngx_http_core_module)
+server_name (ngx_mail_core_module)
+server_name_in_redirect
+server_names_hash_bucket_size
+server_names_hash_max_size
+server_tokens
+session_log
+session_log_format
+session_log_zone
+set (ngx_http_rewrite_module)
+set (ngx_stream_set_module)
+set_real_ip_from (ngx_http_realip_module)
+set_real_ip_from (ngx_mail_realip_module)
+set_real_ip_from (ngx_stream_realip_module)
+slice
+smtp_auth
+smtp_capabilities
+smtp_client_buffer
+smtp_greeting_delay
+source_charset
+split_clients (ngx_http_split_clients_module)
+split_clients (ngx_stream_split_clients_module)
+ssi
+ssi_last_modified
+ssi_min_file_chunk
+ssi_silent_errors
+ssi_types
+ssi_value_length
+ssl (ngx_http_ssl_module)
+ssl (ngx_mail_ssl_module)
+ssl (ngx_mgmt_module)
+ssl_alpn
+ssl_buffer_size
+ssl_certificate (ngx_http_ssl_module)
+ssl_certificate (ngx_mail_ssl_module)
+ssl_certificate (ngx_stream_ssl_module)
+ssl_certificate (ngx_mgmt_module)
+ssl_certificate_key (ngx_http_ssl_module)
+ssl_certificate_key (ngx_mail_ssl_module)
+ssl_certificate_key (ngx_stream_ssl_module)
+ssl_certificate_key (ngx_mgmt_module)
+ssl_ciphers (ngx_http_ssl_module)
+ssl_ciphers (ngx_mail_ssl_module)
+ssl_ciphers (ngx_stream_ssl_module)
+ssl_ciphers (ngx_mgmt_module)
+ssl_client_certificate (ngx_http_ssl_module)
+ssl_client_certificate (ngx_mail_ssl_module)
+ssl_client_certificate (ngx_stream_ssl_module)
+ssl_conf_command (ngx_http_ssl_module)
+ssl_conf_command (ngx_mail_ssl_module)
+ssl_conf_command (ngx_stream_ssl_module)
+ssl_crl (ngx_http_ssl_module)
+ssl_crl (ngx_mail_ssl_module)
+ssl_crl (ngx_stream_ssl_module)
+ssl_crl (ngx_mgmt_module)
+ssl_dhparam (ngx_http_ssl_module)
+ssl_dhparam (ngx_mail_ssl_module)
+ssl_dhparam (ngx_stream_ssl_module)
+ssl_early_data
+ssl_ecdh_curve (ngx_http_ssl_module)
+ssl_ecdh_curve (ngx_mail_ssl_module)
+ssl_ecdh_curve (ngx_stream_ssl_module)
+ssl_engine
+ssl_handshake_timeout
+ssl_name
+ssl_ocsp
+ssl_ocsp_cache
+ssl_ocsp_responder
+ssl_password_file (ngx_http_ssl_module)
+ssl_password_file (ngx_mail_ssl_module)
+ssl_password_file (ngx_stream_ssl_module)
+ssl_password_file (ngx_mgmt_module)
+ssl_prefer_server_ciphers (ngx_http_ssl_module)
+ssl_prefer_server_ciphers (ngx_mail_ssl_module)
+ssl_prefer_server_ciphers (ngx_stream_ssl_module)
+ssl_preread
+ssl_protocols (ngx_http_ssl_module)
+ssl_protocols (ngx_mail_ssl_module)
+ssl_protocols (ngx_stream_ssl_module)
+ssl_protocols (ngx_mgmt_module)
+ssl_reject_handshake
+ssl_server_name
+ssl_session_cache (ngx_http_ssl_module)
+ssl_session_cache (ngx_mail_ssl_module)
+ssl_session_cache (ngx_stream_ssl_module)
+ssl_session_ticket_key (ngx_http_ssl_module)
+ssl_session_ticket_key (ngx_mail_ssl_module)
+ssl_session_ticket_key (ngx_stream_ssl_module)
+ssl_session_tickets (ngx_http_ssl_module)
+ssl_session_tickets (ngx_mail_ssl_module)
+ssl_session_tickets (ngx_stream_ssl_module)
+ssl_session_timeout (ngx_http_ssl_module)
+ssl_session_timeout (ngx_mail_ssl_module)
+ssl_session_timeout (ngx_stream_ssl_module)
+ssl_stapling
+ssl_stapling_file
+ssl_stapling_responder
+ssl_stapling_verify
+ssl_trusted_certificate (ngx_http_ssl_module)
+ssl_trusted_certificate (ngx_mail_ssl_module)
+ssl_trusted_certificate (ngx_stream_ssl_module)
+ssl_trusted_certificate (ngx_mgmt_module)
+ssl_verify
+ssl_verify_client (ngx_http_ssl_module)
+ssl_verify_client (ngx_mail_ssl_module)
+ssl_verify_client (ngx_stream_ssl_module)
+ssl_verify_depth (ngx_http_ssl_module)
+ssl_verify_depth (ngx_mail_ssl_module)
+ssl_verify_depth (ngx_stream_ssl_module)
+ssl_verify_depth (ngx_mgmt_module)
+starttls
+state (ngx_http_upstream_module)
+state (ngx_stream_upstream_module)
+status
+status_format
+status_zone (ngx_http_api_module)
+status_zone (ngx_http_status_module)
+sticky
+sticky_cookie_insert
+stream
+stub_status
+sub_filter
+sub_filter_last_modified
+sub_filter_once
+sub_filter_types
+subrequest_output_buffer_size
+tcp_nodelay (ngx_http_core_module)
+tcp_nodelay (ngx_stream_core_module)
+tcp_nopush
+thread_pool
+timeout
+timer_resolution
+try_files
+types
+types_hash_bucket_size
+types_hash_max_size
+underscores_in_headers
+uninitialized_variable_warn
+upstream (ngx_http_upstream_module)
+upstream (ngx_stream_upstream_module)
+upstream_conf
+usage_report
+use
+user
+userid
+userid_domain
+userid_expires
+userid_flags
+userid_mark
+userid_name
+userid_p3p
+userid_path
+userid_service
+uuid_file
+uwsgi_bind
+uwsgi_buffer_size
+uwsgi_buffering
+uwsgi_buffers
+uwsgi_busy_buffers_size
+uwsgi_cache
+uwsgi_cache_background_update
+uwsgi_cache_bypass
+uwsgi_cache_key
+uwsgi_cache_lock
+uwsgi_cache_lock_age
+uwsgi_cache_lock_timeout
+uwsgi_cache_max_range_offset
+uwsgi_cache_methods
+uwsgi_cache_min_uses
+uwsgi_cache_path
+uwsgi_cache_purge
+uwsgi_cache_revalidate
+uwsgi_cache_use_stale
+uwsgi_cache_valid
+uwsgi_connect_timeout
+uwsgi_force_ranges
+uwsgi_hide_header
+uwsgi_ignore_client_abort
+uwsgi_ignore_headers
+uwsgi_intercept_errors
+uwsgi_limit_rate
+uwsgi_max_temp_file_size
+uwsgi_modifier1
+uwsgi_modifier2
+uwsgi_next_upstream
+uwsgi_next_upstream_timeout
+uwsgi_next_upstream_tries
+uwsgi_no_cache
+uwsgi_param
+uwsgi_pass
+uwsgi_pass_header
+uwsgi_pass_request_body
+uwsgi_pass_request_headers
+uwsgi_read_timeout
+uwsgi_request_buffering
+uwsgi_send_timeout
+uwsgi_socket_keepalive
+uwsgi_ssl_certificate
+uwsgi_ssl_certificate_key
+uwsgi_ssl_ciphers
+uwsgi_ssl_conf_command
+uwsgi_ssl_crl
+uwsgi_ssl_name
+uwsgi_ssl_password_file
+uwsgi_ssl_protocols
+uwsgi_ssl_server_name
+uwsgi_ssl_session_reuse
+uwsgi_ssl_trusted_certificate
+uwsgi_ssl_verify
+uwsgi_ssl_verify_depth
+uwsgi_store
+uwsgi_store_access
+uwsgi_temp_file_write_size
+uwsgi_temp_path
+valid_referers
+variables_hash_bucket_size (ngx_http_core_module)
+variables_hash_bucket_size (ngx_stream_core_module)
+variables_hash_max_size (ngx_http_core_module)
+variables_hash_max_size (ngx_stream_core_module)
+worker_aio_requests
+worker_connections
+worker_cpu_affinity
+worker_priority
+worker_processes
+worker_rlimit_core
+worker_rlimit_nofile
+worker_shutdown_timeout
+working_directory
+xclient
+xml_entities
+xslt_last_modified
+xslt_param
+xslt_string_param
+xslt_stylesheet
+xslt_types
+zone (ngx_http_upstream_module)
+zone (ngx_stream_upstream_module)
+zone_sync
+zone_sync_buffers
+zone_sync_connect_retry_interval
+zone_sync_connect_timeout
+zone_sync_interval
+zone_sync_recv_buffer_size
+zone_sync_server
+zone_sync_ssl
+zone_sync_ssl_certificate
+zone_sync_ssl_certificate_key
+zone_sync_ssl_ciphers
+zone_sync_ssl_conf_command
+zone_sync_ssl_crl
+zone_sync_ssl_name
+zone_sync_ssl_password_file
+zone_sync_ssl_protocols
+zone_sync_ssl_server_name
+zone_sync_ssl_trusted_certificate
+zone_sync_ssl_verify
+zone_sync_ssl_verify_depth
+zone_sync_timeout
