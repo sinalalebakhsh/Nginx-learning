@@ -332,10 +332,18 @@ Output: content in index.html, for main is
     My name is Sina LalehBakhsh from Earth.
 ===================================================
 49-
+cd /root
 ===================================================
 50-
+pwd
+
+Output:
+    /root
 ===================================================
 51-
+git clone git@github.com:LinkedInLearning/learning-nginx-2492317.git
+OR
+git clone https://github.com/LinkedInLearning/learning-nginx-2492317.git
 ===================================================
 52-
 ===================================================
