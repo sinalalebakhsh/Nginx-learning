@@ -302,16 +302,34 @@ echo "My name is Sina LalehBakhsh from Earth." > /var/www/binaryville/index.html
 42- Go to your IP/Server/WebSite/  and check changes
 ===================================================
 43-
+vim /etc/nginx/conf.d/binaryville.conf
 ===================================================
-44-
+44- Change content like this
+server {
+    listen 80 default_server;
+    server_name binaryville.local www.binaryville.local;
+    index index.html index.htm index.php;
+    root /var/www/binaryville
+}
 ===================================================
-45-
+45- for more information
+https://www.nginx.org/en/docs/http/request_processing.html
 ===================================================
 46-
+nginx -t
+
+Output:
+    nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+    nginx: configuration file /etc/nginx/nginx.conf test is successful
 ===================================================
 47-
+systemctl reload nginx
 ===================================================
 48-
+curl localhost
+
+Output: content in index.html, for main is
+    My name is Sina LalehBakhsh from Earth.
 ===================================================
 49-
 ===================================================
