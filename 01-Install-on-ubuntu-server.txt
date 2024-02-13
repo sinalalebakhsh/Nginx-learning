@@ -565,9 +565,13 @@ systemctl reload nginx    => without any output, which means OK
 Check the Ports
 if NGINX is up and running but you aren't seeing anything served, you'll want to check to make sure that the standard ports for web traffic are open, ports 80 and 443.
 COMMANDS for checking ports:
-sudo lsof -i :80 -i :443 | grep nginx
-sudo apt install net-tools
-sudo netstat -plan | grep nginx
+    sudo lsof -i :80 -i :443 | grep nginx
+    OR
+    sudo apt install net-tools
+    sudo netstat -plan | grep nginx
+    OR
+Tail the Logs
+    tail -f /var/logs/nginx/*.log
 ===================================================
 80-
 sudo lsof -i :80 -i :443 | grep nginx
@@ -586,7 +590,19 @@ Output:
     unix  3      [ ]         STREAM     CONNECTED     987621    2341/nginx: master   
     unix  3      [ ]         STREAM     CONNECTED     987621    2341/nginx: master  
 ===================================================
+
+        Customize an NGINX Configuration
+        -------------------------------------
+        1. Remove the default NGINX configuration
+        2. Add the following file below to the correct location on the server.
+        3. Update the confguration to include a location for /complete that is only served on exact matches
+        4. Update the location to use custom logging to a file named complete.access.log in the default logging locaiton for NGINX.
+        5. Validate the custom location by browsing to the DNS for your server using the route /complete. For example, http://example.com/complete.
+        6. Validate the custom logging by viewing the contents of the log file in /var/log/nginx/.
+
+===================================================
 82-
+
 ===================================================
 83-
 ===================================================
