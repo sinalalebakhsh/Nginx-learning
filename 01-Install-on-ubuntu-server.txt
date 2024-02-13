@@ -680,10 +680,28 @@ than
 :w and Enter(return) = save and don't out
 ===================================================
 92-
+:wq
+than
+Enter (return)
 ===================================================
 93-
+nginx -t
+
+Output:
+    nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+    nginx: configuration file /etc/nginx/nginx.conf test is successful
 ===================================================
 94-
+systemctl reload nginx
+
+If Output:
+    nginx.service is not active, cannot reload.
+
+than
+systemctl start nginx
+
+than
+systemctl reload nginx
 ===================================================
 95-
 ===================================================
