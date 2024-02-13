@@ -602,25 +602,82 @@ Output:
 
 ===================================================
 82-
+cd /etc/nginx/sites-enabled/
+than:
+pwd
 
+Output:
+    /etc/nginx/sites-enabled
 ===================================================
 83-
+ls -ltr
+
+Output: (should be nothing) IF is like this
+    default -> /etc/nginx/sites-available/default
+
+So do this:
+unlink default
+
+again:
+ls -ltr
+
+Output: should be nothing
 ===================================================
 84-
+cd ../
 ===================================================
 85-
+cd conf.d/
 ===================================================
 86-
+vim complete.conf
 ===================================================
 87-
+hit I key
 ===================================================
-88-
+88- Paste this in complete.conf
+server {
+    listen 80 default_server;
+    listen [::]:80;
+
+    ________ADD_THE_CUSTOM_LOCATION_HERE________ {
+
+        # The `access_log` directive tells NGINX where to write logs for the
+        # context containing the directive.
+        # Check out the following URL for more details:
+        # http://nginx.org/en/docs/http/ngx_http_log_module.html#access_log
+        access_log ________ADD_THE_CUSTOM_LOG_FILE_HERE________;
+
+        # The `return` directive tells NGINX to stop processing and return
+        # the specified code along with an optional response.
+        # Check out the following URL for more details:
+        # http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#return
+        return 200 '{"Message": "Your request is complete."}\n';
+
+        # The `default_type` directive helps NGINX tell clients
+        # how to interpret the content of a response.
+        # Check out the following URL for more details:
+        # http://nginx.org/en/docs/http/ngx_http_core_module.html#default_type
+        default_type text/json;
+    }
+}
 ===================================================
-89-
+89- Change this line
+________ADD_THE_CUSTOM_LOCATION_HERE________ {
+
+With:
+location = /complete {
 ===================================================
-90-
+90- Change this line
+access_log ________ADD_THE_CUSTOM_LOG_FILE_HERE________;
+
+with: (without insert mode you can use X key for delete characters)
+access_log /var/log/nginx/complete.access.log;
 ===================================================
 91-
+Esc 
+than
+:w and Enter(return) = save and don't out
 ===================================================
 92-
 ===================================================
