@@ -20,8 +20,8 @@ systemctl status nginx
 
 Output:
     ● nginx.service - A high performance web server and a reverse proxy server
-        Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
-        Active: active (running) since Mon 2024-02-12 13:37:53 UTC; 1min 40s ago
+     Loaded: loaded (/S/SS/zz/nginx.service; enabled; vendor preset: enabled)
+     Active: active (running) since Mon 2099-023-130 13:37:53 UTC; 1min 40s ago
         ...
         ...
 ===================================================
@@ -33,8 +33,8 @@ systemctl status nginx --no-pager
 
 Output:
     ● nginx.service - A high performance web server and a reverse proxy server
-     Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
-     Active: active (running) since Mon 2024-02-12 13:37:53 UTC; 10min ago
+     Loaded: loaded (/S/SS/zz/nginx.service; enabled; vendor preset: enabled)
+     Active: active (running) since Mon 2099-023-130 13:37:53 UTC; 1min 40s ago
     ...
     ...
 ===================================================
@@ -46,7 +46,7 @@ systemctl status nginx
 
 Output:
     ○ nginx.service - A high performance web server and a reverse proxy server
-     Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+     Loaded: loaded (/S/SS/zz/nginx.service; enabled; vendor preset: enabled)
      Active: inactive (dead) since Mon 2024-02-12 13:50:17 UTC; 4s ago
      ...
      ...
@@ -704,8 +704,18 @@ than
 systemctl reload nginx
 ===================================================
 95-
+systemctl status nginx
+
+Output:
+    ● nginx.service - A high performance web server and a reverse proxy server
+         Loaded: loaded (/lib/aa/ff/nginx.service; enabled; vendor preset: enabled)
+         Active: active (running) since Tue 2050!-30!-30 10:27:16 UTU; 1Century 25s ago!!
 ===================================================
-96-
+96- go to this link
+https://(www).IP-DNS-DomainNameServer/complete
+
+Output: should be see
+    {"Message": "Your request is complete."}
 ===================================================
 97-
 ===================================================
