@@ -507,18 +507,84 @@ Output:
     /var/log/nginx
 ===================================================
 75-
+ls
+
+Output:
+    access.log                    binaryville.local.error.log          binaryville.local.images.error.log
+    binaryville.local.access.log  binaryville.local.images.access.log  error.log
 ===================================================
 76-
+for i in {1..10}; do curl localhost > /dev/null; done
+
+Output:
+      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                     Dload  Upload   Total   Spent    Left  Speed
+    100 29987  100 29987    0     0  4679k      0 --:--:-- --:--:-- --:--:-- 5856k
+      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+    ...
+    ...
 ===================================================
 77-
+cat binaryville.local.access.log
+
+Output:
+    127.0.0.1 - - [13/Feb/2024:07:13:32 +0000] "GET / HTTP/1.1" 200 29987 "-" "curl/7.81.0"
+    127.0.0.1 - - [13/Feb/2024:07:13:32 +0000] "GET / HTTP/1.1" 200 29987 "-" "curl/7.81.0"
+    ...
+    ...
 ===================================================
 78-
+for i in {1..10}; do curl localhost/images/ > /dev/null; done
+
+Output:
+      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                     Dload  Upload   Total   Spent    Left  Speed
+    100  2338    0  2338    0     0   371k      0 --:--:-- --:--:-- --:--:--  456k
+    ...
+    ...
 ===================================================
 79-
+cat binaryville.local.images.access.log
+
+Output:
+    127.0.0.1 - - [13/Feb/2024:07:43:07 +0000] "GET /images/ HTTP/1.1" 200 2350 "-" "curl/7.81.0"
+    127.0.0.1 - - [13/Feb/2024:07:43:07 +0000] "GET /images/ HTTP/1.1" 200 2350 "-" "curl/7.81.0"
+    ...
+    ...
+===================================================
+
+                Troubleshoot NGINX
+
+Check for Configuration File Errors
+nginx -t
+
+Check NGINX Status and Reload the Configuration
+systemctl status nginx
+systemctl reload nginx    => without any output, which means OK
+
+Check the Ports
+if NGINX is up and running but you aren't seeing anything served, you'll want to check to make sure that the standard ports for web traffic are open, ports 80 and 443.
+COMMANDS for checking ports:
+sudo lsof -i :80 -i :443 | grep nginx
+sudo apt install net-tools
+sudo netstat -plan | grep nginx
 ===================================================
 80-
+sudo lsof -i :80 -i :443 | grep nginx
+
+Output:
+    nginx   1234     root    8u  IPv4  2342      0t0  TCP *:http (LISTEN)
+    nginx   1234 www-data    8u  IPv4  2342      0t0  TCP *:http (LISTEN)
 ===================================================
 81-
+sudo apt install net-tools
+than
+sudo netstat -plan | grep nginx
+
+Output:
+    tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      2341/nginx: master  
+    unix  3      [ ]         STREAM     CONNECTED     987621    2341/nginx: master   
+    unix  3      [ ]         STREAM     CONNECTED     987621    2341/nginx: master  
 ===================================================
 82-
 ===================================================
