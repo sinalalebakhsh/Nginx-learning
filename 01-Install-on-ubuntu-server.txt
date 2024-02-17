@@ -742,6 +742,40 @@ See ->  023-Reverse proxies and load balancing.png
 See ->  024-Load Balancer.png
         025-Load Balancer.png
         
+
+Defines groups os servers that can be references by other directives
+e.g
+upstream example {
+    server a.example.com:8001;
+    server bb.example.com:8002;
+}
+
+more information:
+https://www.nginx.org/en/docs/http/ngx_http_upstream_module.html
+
+NGINX Configuration Contexts
+global context
+    http {
+        server {
+            location {
+
+            }
+        }
+    }
+
+upstream example:
+http {
+    upstream example {
+        ...
+        ...
+    }
+    server {
+        location {
+            proxy_pass http://example;
+        }
+    }
+}
+
 ===================================================
 100- 
 ===================================================
