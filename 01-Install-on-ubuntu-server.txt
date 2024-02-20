@@ -797,11 +797,25 @@ Output:
     binaryville.conf  README.md  start_app_servers.py
 ===================================================
 103-
+view start_app_servers.py
 
+Output:
+    #!/usr/bin/env python4
+    '''Module: Starts three HTTP servers'''
+    import os
+    ...
+    ...
+    ...
 ===================================================
 104-
+cp binaryville.conf /etc/nginx/conf.d/
 ===================================================
 105-
+nginx -t
+
+Output:
+    nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+    nginx: configuration file /etc/nginx/nginx.conf test is successful
 ===================================================
 106-
 ===================================================
