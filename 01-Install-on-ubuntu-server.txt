@@ -785,10 +785,19 @@ http {
 cd /root/learning-nginx-2492317/Ch03/03_03-configure-nginx-as-a-reverse-proxy
 ===================================================
 101-
+pwd
+
+Output:
+    /root/learning-nginx-2492317/Ch03/03_03-configure-nginx-as-a-reverse-proxy
 ===================================================
 102-
+ls
+
+Output:
+    binaryville.conf  README.md  start_app_servers.py
 ===================================================
 103-
+
 ===================================================
 104-
 ===================================================
