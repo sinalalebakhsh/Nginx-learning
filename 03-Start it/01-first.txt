@@ -1,0 +1,7 @@
+first steps to run nginx
+
+1-
+apt show nginx
+
+
+
