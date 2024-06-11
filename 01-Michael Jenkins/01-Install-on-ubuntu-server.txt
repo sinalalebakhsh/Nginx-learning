@@ -4,6 +4,8 @@ Origin Pages Source:
 
 1- 
 apt update
+
+apt upgrade
 ===================================================
 2-
 apt install nginx
