@@ -163,7 +163,7 @@ Output:
 ===================================================
 18-
 cd /var/log/nginx
-than
+THAN
 ls
 
 Output:
