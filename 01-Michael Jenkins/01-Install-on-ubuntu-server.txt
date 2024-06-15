@@ -304,12 +304,12 @@ systemctl status nginx
 mkdir -p /var/www/sinalalehbakhsh
 ===================================================
 41- Let's put a test file in that directory
-echo "My name is Sina LalehBakhsh from Earth." > /var/www/binaryville/index.html
+echo "My name is Sina LalehBakhsh from Earth." > /var/www/sinalalehbakhsh/index.html
 ===================================================
 42- Go to your IP/Server/WebSite/  and check changes
 ===================================================
 43-
-vim /etc/nginx/conf.d/binaryville.conf
+vim /etc/nginx/conf.d/sinalalehbakhsh.conf
 ===================================================
 44- Change content like this
 server {
