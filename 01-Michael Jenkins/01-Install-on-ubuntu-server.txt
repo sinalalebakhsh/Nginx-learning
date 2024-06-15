@@ -238,6 +238,7 @@ Output: should be shows anything!!
 ===================================================
 27- Look at "009-Inside nginx conf.png" link
 https://www.nginx.org/en/docs/dirindex.html
+
 ===================================================
 28-
 ls -ltr /etc/nginx/sites-enabled/
@@ -257,7 +258,7 @@ Output:
     -rw-r--r-- 1 root root 2412 May 30  2023 default
 ===================================================
 31-
-vim /etc/nginx/conf.d/binaryville.conf
+vim /etc/nginx/conf.d/sinalalehbakhsh.conf
 ===================================================
 32- Press "I" key for Insert mode
 i
@@ -268,7 +269,7 @@ Output: in bottom screen:
 33- write
 server {
     listen 80;
-    root /var/www/binaryville;
+    root /var/www/sinalalehbakhsh;
 }
 ===================================================
 34- Press "Esc" key
@@ -278,12 +279,12 @@ server {
 than hit the Enter button
 ===================================================
 36-
-cat /etc/nginx/conf.d/binaryville.conf
+cat /etc/nginx/conf.d/sinalalehbakhsh.conf
 
 Output:
     server {
         listen 80;
-        root /var/www/binaryville;
+        root /var/www/sinalalehbakhsh;
     }
 ===================================================
 37- Test the configuration
@@ -300,7 +301,7 @@ systemctl reload nginx
 systemctl status nginx
 ===================================================
 40-
-mkdir -p /var/www/binaryville
+mkdir -p /var/www/sinalalehbakhsh
 ===================================================
 41- Let's put a test file in that directory
 echo "My name is Sina LalehBakhsh from Earth." > /var/www/binaryville/index.html
