@@ -1,0 +1,15 @@
+
+
+systemctl status nginx
+systemctl reload nginx
+
+
+Check the Ports:
+sudo lsof -i :80 -i :443 | grep nginx
+sudo apt install net-tools
+sudo netstat -plan | grep nginx
+
+
+Tail the logs:
+tail -f /var/logs/nginx/*.log
+
