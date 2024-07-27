@@ -45,6 +45,30 @@ server {
 
 
 
+    # Create the document root directory and an index file:
+sudo mkdir -p /var/www/acronproject.com
+sudo nano /var/www/acronproject.com/index.html
+
+    # Add some basic HTML content to the index file for testing:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Acron Project</title>
+</head>
+<body>
+    <h1>Welcome to Acron Project</h1>
+    <p>This is the default index page for acronproject.com</p>
+</body>
+</html>
+
+
+
+
+
+
+
 
 
 
