@@ -1,135 +1,138 @@
-Origin Pages Source:
-	https://www.nginx.org/
-	https://www.nginx.com/
+# Origin Pages Source:
+# 	https://www.nginx.org/
+# 	https://www.nginx.com/
 
-1- 
+# 1- 
 apt update
 
 apt upgrade
-===================================================
-2-
+# ===================================================
+# 2-
 apt install nginx
-===================================================
-3-
+# ===================================================
+# 3-
 apt update
 apt upgrade
 apt update
-===================================================
-4-
+# ===================================================
+# 4-
 nginx -v
 
-Output:
-nginx version: nginx/1.18.0 (Ubuntu)
-===================================================
-5-
+# Output:
+# nginx version: nginx/1.18.0 (Ubuntu)
+# ===================================================
+# 5-
 systemctl status nginx
 
-Output:
-    ● nginx.service - A high performance web server and a reverse proxy server
-     Loaded: loaded (/S/SS/zz/nginx.service; enabled; vendor preset: enabled)
-     Active: active (running) since Mon 2099-023-130 13:37:53 UTC; 1min 40s ago
-        ...
-        ...
-===================================================
-6- Go in browser than link your website/IP/VPS,etc 
-should see default page NginX
-===================================================
-7-
+# Output:
+#     ● nginx.service - A high performance web server and a reverse proxy server
+#      Loaded: loaded (/S/SS/zz/nginx.service; enabled; vendor preset: enabled)
+#      Active: active (running) since Mon 2099-023-130 13:37:53 UTC; 1min 40s ago
+#         ...
+#         ...
+
+# ===================================================
+# 6- Go in browser than link your website/IP/VPS,etc 
+# should see default page NginX
+
+
+# ===================================================
+# 7-
 systemctl status nginx --no-pager
 
-Output:
-    ● nginx.service - A high performance web server and a reverse proxy server
-     Loaded: loaded (/S/SS/zz/nginx.service; enabled; vendor preset: enabled)
-     Active: active (running) since Mon 2099-023-130 13:37:53 UTC; 1min 40s ago
-    ...
-    ...
-===================================================
-8-
+# Output:
+#     ● nginx.service - A high performance web server and a reverse proxy server
+#      Loaded: loaded (/S/SS/zz/nginx.service; enabled; vendor preset: enabled)
+#      Active: active (running) since Mon 2099-023-130 13:37:53 UTC; 1min 40s ago
+#     ...
+#     ...
+# ===================================================
+# 8-
 systemctl stop nginx
-===================================================
-9-
+# ===================================================
+# 9-
 systemctl status nginx
 
-Output:
-    ○ nginx.service - A high performance web server and a reverse proxy server
-     Loaded: loaded (/S/SS/zz/nginx.service; enabled; vendor preset: enabled)
-     Active: inactive (dead) since Mon 2024-02-12 13:50:17 UTC; 4s ago
-     ...
-     ...
-===================================================
-10-
+# Output:
+#     ○ nginx.service - A high performance web server and a reverse proxy server
+#      Loaded: loaded (/S/SS/zz/nginx.service; enabled; vendor preset: enabled)
+#      Active: inactive (dead) since Mon 2024-02-12 13:50:17 UTC; 4s ago
+#      ...
+#      ...
+# ===================================================
+# 10-
 systemctl start nginx
-===================================================
-11-
+# ===================================================
+# 11-
 systemctl status nginx
 
-Output:
-    ● nginx.service - A high performance web server and a reverse proxy server
-     Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
-     Active: active (running) since Mon 2024-02-12 13:52:47 UTC; 34s ago
-     ...
-     ... 
-===================================================
-12-
+# Output:
+    # ● nginx.service - A high performance web server and a reverse proxy server
+    #  Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+    #  Active: active (running) since Mon 2024-02-12 13:52:47 UTC; 34s ago
+    #  ...
+    #  ... 
+# ===================================================
+# 12-
 nginx -h
 
-Output:
-    nginx version: nginx/1.18.0 (Ubuntu)
-Usage: nginx [-?hvVtTq] [-s signal] [-c filename] [-p prefix] [-g directives]
+# Output:
+#     nginx version: nginx/1.18.0 (Ubuntu)
+# Usage: nginx [-?hvVtTq] [-s signal] [-c filename] [-p prefix] [-g directives]
 
-Options:
-  -?,-h         : this help
-  -v            : show version and exit
-  -V            : show version and configure options then exit
-  -t            : test configuration and exit
-  -T            : test configuration, dump it and exit
-  -q            : suppress non-error messages during configuration testing
-  -s signal     : send signal to a master process: stop, quit, reopen, reload
-  -p prefix     : set prefix path (default: /usr/share/nginx/)
-  -c filename   : set configuration file (default: /etc/nginx/nginx.conf)
-  -g directives : set global directives out of configuration file
-===================================================
-13-
+# Options:
+#   -?,-h         : this help
+#   -v            : show version and exit
+#   -V            : show version and configure options then exit
+#   -t            : test configuration and exit
+#   -T            : test configuration, dump it and exit
+#   -q            : suppress non-error messages during configuration testing
+#   -s signal     : send signal to a master process: stop, quit, reopen, reload
+#   -p prefix     : set prefix path (default: /usr/share/nginx/)
+#   -c filename   : set configuration file (default: /etc/nginx/nginx.conf)
+#   -g directives : set global directives out of configuration file
+# ===================================================
+# 13-
 nginx -t
 
-Output:
-    nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-    nginx: configuration file /etc/nginx/nginx.conf test is successful
-===================================================
-14-
+# Output:
+    # nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+    # nginx: configuration file /etc/nginx/nginx.conf test is successful
+# ===================================================
+# 14-
 nginx -T
 
-Output:
-    nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-    nginx: configuration file /etc/nginx/nginx.conf test is successful
+# Output:
+    # nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+    # nginx: configuration file /etc/nginx/nginx.conf test is successful
     # configuration file /etc/nginx/nginx.conf:
-    ...
-    ...
-===================================================
-15-
+    # ...
+    # ...
+# ===================================================
+# 15-
 cd /etc/nginx
-Than
+# Than
 ls
 
-Output:
-    conf.d        fastcgi_params  koi-win     modules-available  nginx.conf
-    ...
-    ...
-===================================================
-16-
+# Output:
+    # conf.d        fastcgi_params  koi-win     modules-available  nginx.conf
+    # ...
+    # ...
+# ===================================================
+# 16-
 more nginx.conf
 
-Output:
-    user www-data;
-    worker_processes auto;
-    ...
-    ...
-    --More--(40%)
-===================================================
-17- 
+# Output:
+    # user www-data;
+    # worker_processes auto;
+    # ...
+    # ...
+    # --More--(40%)
+# ===================================================
+# 17- 
 more /etc/nginx/sites-available/default
 
-Output:
+# Output:
     ##
     # You should look at the following URL's in order to grasp a solid understanding
     # of Nginx configuration files in order to fully unleash the power of Nginx.
@@ -158,222 +161,248 @@ Output:
     #
     # You can move that to a different file under sites-available/ and symlink that
     # to sites-enabled/ to enable it.
-    ...
-    ...
-===================================================
-18-
+    # ...
+    # ...
+# ===================================================
+# 18-
 cd /var/log/nginx
-THAN
+# THAN
 ls
 
-Output:
-    access.log  error.log
-===================================================
-19-
+# Output:
+    # access.log  error.log
+# ===================================================
+# 19-
 head access.log
 
-Output:
-    ...
-    [IP Your server] - - [12/Feb/2024:13:42:10 +0000] "GET / HTTP/1.1" 200 396 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:122.0) Gecko/20100101 Firefox/122.0"
-    e.g. 
-    123.10.10.143 - - [12/Feb/2024:13:42:10 +0000] "GET / HTTP/1.1" 200 396 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:122.0) Gecko/20100101 Firefox/122.0"
-    ...
-===================================================
-20-
+# Output:
+    # ...
+    # [IP Your server] - - [12/Feb/2024:13:42:10 +0000] "GET / HTTP/1.1" 200 396 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:122.0) Gecko/20100101 Firefox/122.0"
+    # e.g. 
+    # 123.10.10.143 - - [12/Feb/2024:13:42:10 +0000] "GET / HTTP/1.1" 200 396 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:122.0) Gecko/20100101 Firefox/122.0"
+    # ...
+# ===================================================
+# 20-
 head error.log
 
-Output:
-    2024/02/12 13:27:30 [notice] 22894#22894: Signal process started
-    2024/02/12 13:27:31 [notice] 22907#22907: Signal process started
-    2024/02/12 13:27:32 [notice] 23001#23001: Signal process started
-    ...
-    ...
-===================================================
-21-
+# Output:
+    # 2024/02/12 13:27:30 [notice] 22894#22894: Signal process started
+    # 2024/02/12 13:27:31 [notice] 22907#22907: Signal process started
+    # 2024/02/12 13:27:32 [notice] 23001#23001: Signal process started
+    # ...
+    # ...
+# ===================================================
+# 21-
 cd /var/www
-than
+# than
 ls
 
-Output:
-    html
-===================================================
-22-
+# Output:
+    # html
+# ===================================================
+# 22-
 find .
 
-Output:
-    .
-    ./html
-    ./html/index.nginx-debian.html
-===================================================
-23-
+# Output:
+    # .
+    # ./html
+    # ./html/index.nginx-debian.html
+# ===================================================
+# 23-
 cd /etc/nginx
-than
+# than
 view nginx.conf
 
-Output:
-    user www-data;
-    worker_processes auto;
-    ...
-    ...
-===================================================
-24-
+# Output:
+    # user www-data;
+    # worker_processes auto;
+    # ...
+    # ...
+# ===================================================
+# 24-
 :q
 
-Press Enter key
-===================================================
-25-
+# Press Enter key
+# ===================================================
+# 25-
 cd sites-enabled/
-than
+# than
 ls
 
-Output:
-    default
-===================================================
-26-
+# Output:
+    # default
+# ===================================================
+# 26-
 cd ../conf.d/
-than
+# than
 ls
 
-Output: should be shows anything!!
-===================================================
-27- Look at "009-Inside nginx conf.png" link
-https://www.nginx.org/en/docs/dirindex.html
+# Output: should be shows nothing!!
+# ===================================================
+# 27- Look at "009-Inside nginx conf.png" link
+# https://www.nginx.org/en/docs/dirindex.html
 
-===================================================
-28-
+# ===================================================
+# 28-
 ls -ltr /etc/nginx/sites-enabled/
 
-Output:
-    total 0
-    lrwxrwxrwx 1 root root 34 Feb 12 13:27 default -> /etc/nginx/sites-available/default
-===================================================
-29-
+# Output:
+    # total 0
+    # lrwxrwxrwx 1 root root 34 Feb 12 13:27 default -> /etc/nginx/sites-available/default
+# ===================================================
+# 29-
 unlink /etc/nginx/sites-enabled/default
-===================================================
-30-
+
+
+ls -ltr /etc/nginx/sites-enabled/
+# Output:
+# total 0
+
+# ===================================================
+# 30-
 ls -ltr /etc/nginx/sites-available/
 
-Output:
-    total 4
-    -rw-r--r-- 1 root root 2412 May 30  2023 default
-===================================================
-31-
-vim /etc/nginx/conf.d/sinalalehbakhsh.conf
-===================================================
-32- Press "I" key for Insert mode
-i
+# Output:
+    # total 4
+    # -rw-r--r-- 1 root root 2412 May 30  2023 default
+# ===================================================
+# 31-
+nano /etc/nginx/conf.d/sinalalehbakhsh.conf
+nano /etc/nginx/conf.d/acronproject.conf
+# ===================================================
+# 32- Press "I" key for Insert mode
+# i
 
-Output: in bottom screen:
+# Output: in bottom screen:
 -- INSERT --  
-===================================================
+# ===================================================
 33- write
 server {
     listen 80;
     root /var/www/sinalalehbakhsh;
 }
-===================================================
-34- Press "Esc" key
-===================================================
-35- write
+# OR
+server {
+    listen 80;
+    root /var/www/acronproject;
+}
+# ===================================================
+# 34- Press "Esc" key
+# ===================================================
+# 35- write
 :wq
-than hit the Enter button
-===================================================
-36-
+# than hit the Enter button
+# ===================================================
+# 36-
 cat /etc/nginx/conf.d/sinalalehbakhsh.conf
 
-Output:
+# Output:
     server {
         listen 80;
         root /var/www/sinalalehbakhsh;
     }
-===================================================
-37- Test the configuration
+# ===================================================
+# 37- Test the configuration
 nginx -t
 
-Output:
-    nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-    nginx: configuration file /etc/nginx/nginx.conf test is successful
-===================================================
-38-
+# Output:
+    # nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+    # nginx: configuration file /etc/nginx/nginx.conf test is successful
+# ===================================================
+# 38-
 systemctl reload nginx
-===================================================
-39-
+# ===================================================
+# 39-
 systemctl status nginx
-===================================================
-40-
+# ===================================================
+# 40-
 mkdir -p /var/www/sinalalehbakhsh
-===================================================
-41- Let's put a test file in that directory
+mkdir -p /var/www/acronproject
+# ===================================================
+# 41- Let's put a test file in that directory
 echo "My name is Sina LalehBakhsh from Earth." > /var/www/sinalalehbakhsh/index.html
-===================================================
-42- Go to your IP/Server/WebSite/  and check changes
-===================================================
-43-
-vim /etc/nginx/conf.d/sinalalehbakhsh.conf
-===================================================
-44- Change content like this
+echo "Acron Project HOME PAGE" > /var/www/acronproject/index.html
+# ===================================================
+# 42- Go to your IP/Server/WebSite/  and check changes
+http://154.16.16.239/
+# ===================================================
+# 43-
+nano /etc/nginx/conf.d/sinalalehbakhsh.conf
+# OR
+nano /etc/nginx/conf.d/acronproject.conf
+# ===================================================
+# 44- Change content like this
 server {
     listen 80 default_server;
     server_name binaryville.local www.binaryville.local;
     index index.html index.htm index.php;
     root /var/www/binaryville
 }
-===================================================
-45- for more information
+# OR
+server {
+    listen 80 default_server;
+    server_name acronproject.com www.acronproject.com;
+    index index.html index.htm index.php;
+    root /var/www/acronproject
+}
+
+# ===================================================
+# 45- for more information
 https://www.nginx.org/en/docs/http/request_processing.html
-===================================================
-46-
+# ===================================================
+# 46-
 nginx -t
 
-Output:
+# Output:
     nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
     nginx: configuration file /etc/nginx/nginx.conf test is successful
-===================================================
-47-
+# ===================================================
+# 47-
 systemctl reload nginx
-===================================================
-48-
+# ===================================================
+# 48-
 curl localhost
 
-Output: content in index.html, for main is
-    My name is Sina LalehBakhsh from Earth.
-===================================================
-Source these commands
+# Output: content in index.html, for main is
+    Acron Project HOME PAGE
+
+# ===================================================
+# Source these commands
     https://github.com/LinkedInLearning/learning-nginx-2492317/tree/d4220816275d6b732f1a750a5f384f6e11c68dcc/Ch01/01_08-add-files-to-the-root-directory
-    OR
+# OR
     https://github.com/AcronProjectGroup/learning-nginx-2492317/tree/main/Ch01/01_08-add-files-to-the-root-directory
-===================================================
-49-
+# ===================================================
+# 49-
 cd /root
-===================================================
-50-
+# ===================================================
+# 50-
 pwd
 
-Output:
+# Output:
     /root
-===================================================
-51-
+# ===================================================
+# 51-
 git clone git@github.com:LinkedInLearning/learning-nginx-2492317.git
 OR
 git clone https://github.com/LinkedInLearning/learning-nginx-2492317.git
-===================================================
-52-
+# ===================================================
+# 52-
 ls learning-nginx-2492317/
 
-Output:
+# Output:
     Binaryville_robot_website_LIL_107684.tgz  Ch00  Ch02  Ch04  Ch06             LICENSE  README.md
     Binaryville_robot_website_LIL_107684.zip  Ch01  Ch03  Ch05  CONTRIBUTING.md  NOTICE
-===================================================
+# ===================================================
 53-
 tar xvf ~/learning-nginx-2492317/Binaryville_robot_website_LIL_107684.tgz --directory /var/www/binaryville/
-===================================================
+# ===================================================
 54-
 ls /var/www/binaryville/
 
-Output:
+# Output:
     403.html  50x.html  account  blog  checkout  humans.txt  index.html  README.rtf  shop
     404.html  about     assets   cart  contact   images      private     robots.txt  _style-guide
-===================================================
+# ===================================================
 Location Directive
     server {
         location [modifier] location_definition {
@@ -383,8 +412,8 @@ Location Directive
         }
         }
     }
-===================================================
-===================================================
+# ===================================================
+# ===================================================
 Location Modifiers
 Modifier    Application to Location Definitions
 --------    ------------------------------------
@@ -393,52 +422,52 @@ Modifier    Application to Location Definitions
   ~         The location definition is used as a case-sensitive regular expression
   ~*        The location definition is used as a case-insensitive regular expression
   ^~        If the longest prefix matches, then no regular expression are checked
-===================================================
-===================================================
+# ===================================================
+# ===================================================
 
 See this file >> 016- Location Processing.png
 
-===================================================
-===================================================
+# ===================================================
+# ===================================================
 55-
 cd /root/learning-nginx-2492417/Ch02/02_03-configure-locations-part-2
-===================================================
+# ===================================================
 56-
 pwd
 
-Output:
+# Output:
     /root/learning-nginx-2492317/Ch02/02_03-configure-locations-part-2
-===================================================
+# ===================================================
 57-
 view binaryville.conf
-===================================================
+# ===================================================
 58- write this and hit Enter
 :set number
-===================================================
+# ===================================================
 59- write this and hit Enter
 :8
-===================================================
+# ===================================================
 60- write this and hit Enter
 :11
 than
 :q
-===================================================
+# ===================================================
 61-
 cp binaryville.conf /etc/nginx/conf.d/
-===================================================
+# ===================================================
 62-
 nginx -t
 
-Output:
+# Output:
     nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
     nginx: configuration file /etc/nginx/nginx.conf test is successful
-===================================================
+# ===================================================
 63-
 systemctl reload nginx
-===================================================
+# ===================================================
 64- go to your IP/Server/Websiter , should be shows index of /mages/
 http://100.28.26.999/images/
-===================================================
+# ===================================================
                     
                     NGINX Logs
                 -------------------
@@ -462,19 +491,19 @@ http {
     error_log /var/log/nginx/error.log;
     ...
 }
-===================================================
+# ===================================================
 65-
 cd /root/learning-nginx-2492317/Ch02/02_04-configure-logs
-===================================================
+# ===================================================
 66-
 pwd
 
-Output:
+# Output:
     /root/learning-nginx-2492317/Ch02/02_04-configure-logs
-===================================================
+# ===================================================
 67-
 view binaryville.conf
-===================================================
+# ===================================================
 68-
 :set number
 than Enter
@@ -484,81 +513,81 @@ than Enter
 than Enter
 :q
 than Enter
-===================================================
+# ===================================================
 69-
 cp binaryville.conf /etc/nginx/conf.d/
-===================================================
+# ===================================================
 70-
 ls /etc/nginx/conf.d/
 
-Output:
+# Output:
     binaryville.conf
-===================================================
+# ===================================================
 71-
 nginx -t
 
-Output:
+# Output:
     nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
     nginx: configuration file /etc/nginx/nginx.conf test is successful
-===================================================
+# ===================================================
 72- 
 systemctl reload nginx
-===================================================
+# ===================================================
 73-
 cd /var/log/nginx
-===================================================
+# ===================================================
 74-
 pwd
 
-Output:
+# Output:
     /var/log/nginx
-===================================================
+# ===================================================
 75-
 ls
 
-Output:
+# Output:
     access.log                    binaryville.local.error.log          binaryville.local.images.error.log
     binaryville.local.access.log  binaryville.local.images.access.log  error.log
-===================================================
+# ===================================================
 76-
 for i in {1..10}; do curl localhost > /dev/null; done
 
-Output:
+# Output:
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                      Dload  Upload   Total   Spent    Left  Speed
     100 29987  100 29987    0     0  4679k      0 --:--:-- --:--:-- --:--:-- 5856k
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
     ...
     ...
-===================================================
+# ===================================================
 77-
 cat binaryville.local.access.log
 
-Output:
+# Output:
     127.0.0.1 - - [13/Feb/2024:07:13:32 +0000] "GET / HTTP/1.1" 200 29987 "-" "curl/7.81.0"
     127.0.0.1 - - [13/Feb/2024:07:13:32 +0000] "GET / HTTP/1.1" 200 29987 "-" "curl/7.81.0"
     ...
     ...
-===================================================
+# ===================================================
 78-
 for i in {1..10}; do curl localhost/images/ > /dev/null; done
 
-Output:
+# Output:
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                      Dload  Upload   Total   Spent    Left  Speed
     100  2338    0  2338    0     0   371k      0 --:--:-- --:--:-- --:--:--  456k
     ...
     ...
-===================================================
+# ===================================================
 79-
 cat binaryville.local.images.access.log
 
-Output:
+# Output:
     127.0.0.1 - - [13/Feb/2024:07:43:07 +0000] "GET /images/ HTTP/1.1" 200 2350 "-" "curl/7.81.0"
     127.0.0.1 - - [13/Feb/2024:07:43:07 +0000] "GET /images/ HTTP/1.1" 200 2350 "-" "curl/7.81.0"
     ...
     ...
-===================================================
+# ===================================================
 
                 Troubleshoot NGINX
 
@@ -567,7 +596,7 @@ nginx -t
 
 Check NGINX Status and Reload the Configuration
 systemctl status nginx
-systemctl reload nginx    => without any output, which means OK
+# systemctl reload nginx    => without any output, which means OK
 
 Check the Ports
 if NGINX is up and running but you aren't seeing anything served, you'll want to check to make sure that the standard ports for web traffic are open, ports 80 and 443.
@@ -579,24 +608,24 @@ COMMANDS for checking ports:
     OR
 Tail the Logs
     tail -f /var/logs/nginx/*.log
-===================================================
+# ===================================================
 80-
 sudo lsof -i :80 -i :443 | grep nginx
 
-Output:
+# Output:
     nginx   1234     root    8u  IPv4  2342      0t0  TCP *:http (LISTEN)
     nginx   1234 www-data    8u  IPv4  2342      0t0  TCP *:http (LISTEN)
-===================================================
+# ===================================================
 81-
 sudo apt install net-tools
 than
 sudo netstat -plan | grep nginx
 
-Output:
+# Output:
     tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      2341/nginx: master  
     unix  3      [ ]         STREAM     CONNECTED     987621    2341/nginx: master   
     unix  3      [ ]         STREAM     CONNECTED     987621    2341/nginx: master  
-===================================================
+# ===================================================
 
         Customize an NGINX Configuration
         -------------------------------------
@@ -607,19 +636,19 @@ Output:
         5. Validate the custom location by browsing to the DNS for your server using the route /complete. For example, http://example.com/complete.
         6. Validate the custom logging by viewing the contents of the log file in /var/log/nginx/.
 
-===================================================
+# ===================================================
 82-
 cd /etc/nginx/sites-enabled/
 than:
 pwd
 
-Output:
+# Output:
     /etc/nginx/sites-enabled
-===================================================
+# ===================================================
 83-
 ls -ltr
 
-Output: (should be nothing) IF is like this
+# Output: (should be nothing) IF is like this
     default -> /etc/nginx/sites-available/default
 
 So do this:
@@ -628,20 +657,20 @@ unlink default
 again:
 ls -ltr
 
-Output: should be nothing
-===================================================
+# Output: should be nothing
+# ===================================================
 84-
 cd ../
-===================================================
+# ===================================================
 85-
 cd conf.d/
-===================================================
+# ===================================================
 86-
 vim complete.conf
-===================================================
+# ===================================================
 87-
 hit I key
-===================================================
+# ===================================================
 88- Paste this in complete.conf
 server {
     listen 80 default_server;
@@ -668,40 +697,40 @@ server {
         default_type text/json;
     }
 }
-===================================================
+# ===================================================
 89- Change this line
 ________ADD_THE_CUSTOM_LOCATION_HERE________ {
 
 With:
 location = /complete {
-===================================================
+# ===================================================
 90- Change this line
 access_log ________ADD_THE_CUSTOM_LOG_FILE_HERE________;
 
 with: (without insert mode you can use X key for delete characters)
 access_log /var/log/nginx/complete.access.log;
-===================================================
+# ===================================================
 91-
 Esc 
 than
 :w and Enter(return) = save and don't out
-===================================================
+# ===================================================
 92-
 :wq
 than
 Enter (return)
-===================================================
+# ===================================================
 93-
 nginx -t
 
-Output:
+# Output:
     nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
     nginx: configuration file /etc/nginx/nginx.conf test is successful
-===================================================
+# ===================================================
 94-
 systemctl reload nginx
 
-If Output:
+# If Output:
     nginx.service is not active, cannot reload.
 
 than
@@ -709,36 +738,36 @@ systemctl start nginx
 
 than
 systemctl reload nginx
-===================================================
+# ===================================================
 95-
 systemctl status nginx
 
-Output:
+# Output:
     ● nginx.service - A high performance web server and a reverse proxy server
          Loaded: loaded (/lib/aa/ff/nginx.service; enabled; vendor preset: enabled)
          Active: active (running) since Tue 2050!-30!-30 10:27:16 UTU; 1Century 25s ago!!
-===================================================
+# ===================================================
 96- go to this link
 https://(www).IP-DNS-DomainNameServer/complete
 
-Output: should be see
+# Output: should be see
     {"Message": "Your request is complete."}
-===================================================
+# ===================================================
 97-
 cd /var/log/nginx/
-===================================================
+# ===================================================
 98-
 ls
 
-Output:
+# Output:
     access.log  error.log   complete.access.log
-===================================================
+# ===================================================
 99-
 cat complete.access.log
 
-Output:
+# Output:
     123.213.103.133 - - [13/Feb/2034!:10:34:03 +0000] "GET /complete HTTP/1.1" 200 41 "-" "Mozilla/3.0 (X10; Win10; Windows x123; rv:122.0) XXX/0192801 Firefox/300.0"
-===================================================
+# ===================================================
 
             a proxy and load balancer
             -------------------------
@@ -783,54 +812,54 @@ http {
     }
 }
 
-===================================================
+# ===================================================
 100-
 cd /root/learning-nginx-2492317/Ch03/03_03-configure-nginx-as-a-reverse-proxy
-===================================================
+# ===================================================
 101-
 pwd
 
-Output:
+# Output:
     /root/learning-nginx-2492317/Ch03/03_03-configure-nginx-as-a-reverse-proxy
-===================================================
+# ===================================================
 102-
 ls
 
-Output:
+# Output:
     binaryville.conf  README.md  start_app_servers.py
-===================================================
+# ===================================================
 103-
 view start_app_servers.py
 
-Output:
+# Output:
     #!/usr/bin/env python4
     '''Module: Starts three HTTP servers'''
     import os
     ...
     ...
     ...
-===================================================
+# ===================================================
 104-
 cp binaryville.conf /etc/nginx/conf.d/
-===================================================
+# ===================================================
 105-
 nginx -t
 
-Output:
+# Output:
     nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
     nginx: configuration file /etc/nginx/nginx.conf test is successful
-===================================================
+# ===================================================
 106-
-===================================================
+# ===================================================
 107-
 systemctl reload nginx
-===================================================
-===================================================
-===================================================
-===================================================
-===================================================
-===================================================
-===================================================
-===================================================
-===================================================
-===================================================
+# ===================================================
+# ===================================================
+# ===================================================
+# ===================================================
+# ===================================================
+# ===================================================
+# ===================================================
+# ===================================================
+# ===================================================
+# ===================================================
