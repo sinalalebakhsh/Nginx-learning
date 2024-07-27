@@ -190,6 +190,27 @@ sudo docker-compose up -d
 # If you need HTTPS (SSL/TLS), 
 # you can use Let's Encrypt with Certbot to obtain 
 # and install a free SSL certificate for your domain.
+# Install Certbot and the Nginx Plugin:
+    # Update your package list and install Certbot:
+sudo apt update
+sudo apt install certbot python3-certbot-nginx
+# Obtain an SSL Certificate:
+    # Use Certbot to obtain and automatically configure an SSL certificate for your domain:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
