@@ -194,9 +194,66 @@ sudo docker-compose up -d
     # Update your package list and install Certbot:
 sudo apt update
 sudo apt install certbot python3-certbot-nginx
-# Obtain an SSL Certificate:
+    # Obtain an SSL Certificate:
     # Use Certbot to obtain and automatically configure an SSL certificate for your domain:
+sudo certbot --nginx -d acronproject.com -d www.acronproject.com
 
+
+
+# Update Nginx Configuration:
+sudo nano /etc/nginx/sites-available/acronproject.com
+# Ensure the configuration looks something like this:
+server {
+    listen 80;
+    server_name acronproject.com www.acronproject.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location /static/ {
+        alias /path/to/your/staticfiles;
+    }
+
+    location /media/ {
+        alias /path/to/your/mediafiles;
+    }
+
+    # Redirect all HTTP traffic to HTTPS
+    if ($scheme = http) {
+        return 301 https://$host$request_uri;
+    }
+}
+
+server {
+    listen 443 ssl;
+    server_name acronproject.com www.acronproject.com;
+
+    ssl_certificate /etc/letsencrypt/live/acronproject.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/acronproject.com/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location /static/ {
+        alias /path/to/your/staticfiles;
+    }
+
+    location /media/ {
+        alias /path/to/your/mediafiles;
+    }
+}
 
 
 
