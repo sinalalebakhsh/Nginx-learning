@@ -138,6 +138,22 @@ server {
 }
 
 
+    # Enable the new configuration by creating a symbolic link:
+sudo ln -s /etc/nginx/sites-available/acronproject.com /etc/nginx/sites-enabled/
+    # Test the Nginx configuration for syntax errors:
+sudo nginx -t
+
+    # Reload Nginx to apply the changes:
+sudo systemctl reload nginx
+
+
+# Ensure your Django application is set up to serve static and media files.
+# Update your settings.py file:
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 
 
@@ -152,6 +168,7 @@ cd sina/
 mkdir django
 cd django/
 root@XXX-XXXX:/home/sina/djangoX#
+
 
 
 
