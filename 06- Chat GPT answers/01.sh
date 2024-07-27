@@ -64,6 +64,20 @@ sudo nano /var/www/acronproject.com/index.html
 </html>
 
 
+    # Enable the new configuration by creating a symbolic link:
+sudo ln -s /etc/nginx/sites-available/acronproject.com /etc/nginx/sites-enabled/
+
+    # Test the Nginx configuration for syntax errors:
+sudo nginx -t
+
+    # Reload Nginx to apply the changes:
+sudo systemctl reload nginx
+
+# Verify the Setup:
+    # Open your web browser and navigate to http://acronproject.com.
+http://acronproject.com
+    # You should see the content of your index.html file if everything is set up correctly.
+
 
 
 
