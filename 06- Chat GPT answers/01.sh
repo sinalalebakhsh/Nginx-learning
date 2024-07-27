@@ -203,6 +203,9 @@ sudo certbot --nginx -d acronproject.com -d www.acronproject.com
 # Update Nginx Configuration:
 sudo nano /etc/nginx/sites-available/acronproject.com
 # Ensure the configuration looks something like this:
+# 
+# Replace /path/to/your/staticfiles and /path/to/your/mediafiles with the actual paths to your static and media files.
+
 server {
     listen 80;
     server_name acronproject.com www.acronproject.com;
