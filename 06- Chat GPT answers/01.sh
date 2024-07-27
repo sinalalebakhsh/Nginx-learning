@@ -111,3 +111,40 @@ docker-compose --version
 # ==============================================
 # ==============================================
 # Set Up Docker for Your Django Application:
+
+# Configure Nginx as a Reverse Proxy:
+    # Create a new Nginx configuration file for your Django application:
+sudo nano /etc/nginx/sites-available/acronproject.com
+    # Add the following configuration to the file:
+server {
+    listen 80;
+    server_name acronproject.com www.acronproject.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location /static/ {
+        alias /path/to/your/staticfiles;
+    }
+
+    location /media/ {
+        alias /path/to/your/mediafiles;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
