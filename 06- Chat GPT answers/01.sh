@@ -25,9 +25,23 @@ sudo systemctl status nginx
 
 
 
+# Configure Nginx to Serve Your Domain:
 
+    # Create a new Nginx configuration file for your domain:
+sudo nano /etc/nginx/sites-available/acronproject.com
 
+    # Add the following configuration to the file:
+server {
+    listen 80;
+    server_name acronproject.com www.acronproject.com;
 
+    root /var/www/acronproject.com;
+    index index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
 
 
 
