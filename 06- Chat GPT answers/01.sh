@@ -147,6 +147,24 @@ sudo nginx -t
 sudo systemctl reload nginx
 
 
+
+
+
+# CHECK git was Installed
+git --version
+git version 2.43.0
+cd /home/
+mkdir sina
+cd sina/
+mkdir django
+cd django/
+root@XXX-XXXX:/home/sina/django#
+
+# CLONE 
+git clone https://github.com/sinalalebakhsh/OnlineShope.git
+
+
+
 # Ensure your Django application is set up to serve static and media files.
 # Update your settings.py file:
 STATIC_URL = '/static/'
@@ -167,19 +185,11 @@ sudo docker-compose up -d
 # Open your web browser and navigate to http://acronproject.com.
 
 
-# CHECK git was Installed
-git --version
-git version 2.43.0
-cd /home/
-mkdir sina
-cd sina/
-mkdir django
-cd django/
-root@XXX-XXXX:/home/sina/djangoX#
 
 
-
-
+# If you need HTTPS (SSL/TLS), 
+# you can use Let's Encrypt with Certbot to obtain 
+# and install a free SSL certificate for your domain.
 
 
 
