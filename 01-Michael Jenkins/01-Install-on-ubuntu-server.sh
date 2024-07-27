@@ -337,25 +337,12 @@ OR
 git clone https://github.com/LinkedInLearning/learning-nginx-2492317.git
 # ===================================================
 # 52-
-ls learning-nginx-2492317/
-
-# Output:
-    acronproject_robot_website_LIL_107684.tgz  Ch00  Ch02  Ch04  Ch06             LICENSE  README.md
-    acronproject_robot_website_LIL_107684.zip  Ch01  Ch03  Ch05  CONTRIBUTING.md  NOTICE
 # ===================================================
 # 53-
-tar xvf ~/learning-nginx-2492317/acronproject_robot_website_LIL_107684.tgz --directory /var/www/acronproject/
 # ===================================================
 # 54-
-ls /var/www/acronproject/
-
-# Output:
-    403.html  50x.html  account  blog  checkout  humans.txt  index.html  README.rtf  shop
-    404.html  about     assets   cart  contact   images      private     robots.txt  _style-guide
-
 # ===================================================
 # 55-
-cd /root/learning-nginx-2492417/Ch02/02_03-configure-locations-part-2
 # ===================================================
 # 56-
 # ===================================================
