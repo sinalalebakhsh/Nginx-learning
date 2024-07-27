@@ -129,40 +129,8 @@ more nginx.conf
     # ...
     # --More--(40%)
 # ===================================================
-# 17- 
+# 17- CHECK THIS 
 more /etc/nginx/sites-available/default
-
-# Output:
-    ##
-    # You should look at the following URL's in order to grasp a solid understanding
-    # of Nginx configuration files in order to fully unleash the power of Nginx.
-    # https://www.nginx.com/resources/wiki/start/
-    # https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/
-    # https://wiki.debian.org/Nginx/DirectoryStructure
-    #
-    # In most cases, administrators will remove this file from sites-enabled/ and
-    # leave it as reference inside of sites-available where it will continue to be
-    # updated by the nginx packaging team.
-    #
-    # This file will automatically load configuration files provided by other
-    # applications, such as Drupal or Wordpress. These applications will be made
-    # available underneath a path with that package name, such as /drupal8.
-    #
-    # Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
-    ##
-
-    # Default server configuration
-    #
-    server {
-        ...
-        ...
-    }
-    # Virtual Host configuration for example.com
-    #
-    # You can move that to a different file under sites-available/ and symlink that
-    # to sites-enabled/ to enable it.
-    # ...
-    # ...
 # ===================================================
 # 18-
 cd /var/log/nginx
@@ -267,7 +235,6 @@ ls -ltr /etc/nginx/sites-available/
     # -rw-r--r-- 1 root root 2412 May 30  2023 default
 # ===================================================
 # 31-
-nano /etc/nginx/conf.d/sinalalehbakhsh.conf
 nano /etc/nginx/conf.d/acronproject.conf
 # ===================================================
 # 32- Press "I" key for Insert mode
@@ -276,12 +243,7 @@ nano /etc/nginx/conf.d/acronproject.conf
 # Output: in bottom screen:
 -- INSERT --  
 # ===================================================
-33- write
-server {
-    listen 80;
-    root /var/www/sinalalehbakhsh;
-}
-# OR
+# 33- write
 server {
     listen 80;
     root /var/www/acronproject;
@@ -294,12 +256,12 @@ server {
 # than hit the Enter button
 # ===================================================
 # 36-
-cat /etc/nginx/conf.d/sinalalehbakhsh.conf
+cat /etc/nginx/conf.d/acronproject.conf
 
 # Output:
     server {
         listen 80;
-        root /var/www/sinalalehbakhsh;
+        root /var/www/acronproject;
     }
 # ===================================================
 # 37- Test the configuration
@@ -316,36 +278,24 @@ systemctl reload nginx
 systemctl status nginx
 # ===================================================
 # 40-
-mkdir -p /var/www/sinalalehbakhsh
 mkdir -p /var/www/acronproject
 # ===================================================
 # 41- Let's put a test file in that directory
-echo "My name is Sina LalehBakhsh from Earth." > /var/www/sinalalehbakhsh/index.html
 echo "Acron Project HOME PAGE" > /var/www/acronproject/index.html
 # ===================================================
 # 42- Go to your IP/Server/WebSite/  and check changes
 http://154.16.16.239/
 # ===================================================
 # 43-
-nano /etc/nginx/conf.d/sinalalehbakhsh.conf
-# OR
 nano /etc/nginx/conf.d/acronproject.conf
 # ===================================================
 # 44- Change content like this
-server {
-    listen 80 default_server;
-    server_name binaryville.local www.binaryville.local;
-    index index.html index.htm index.php;
-    root /var/www/binaryville
-}
-# OR
 server {
     listen 80 default_server;
     server_name acronproject.com www.acronproject.com;
     index index.html index.htm index.php;
     root /var/www/acronproject
 }
-
 # ===================================================
 # 45- for more information
 https://www.nginx.org/en/docs/http/request_processing.html
@@ -390,469 +340,126 @@ git clone https://github.com/LinkedInLearning/learning-nginx-2492317.git
 ls learning-nginx-2492317/
 
 # Output:
-    Binaryville_robot_website_LIL_107684.tgz  Ch00  Ch02  Ch04  Ch06             LICENSE  README.md
-    Binaryville_robot_website_LIL_107684.zip  Ch01  Ch03  Ch05  CONTRIBUTING.md  NOTICE
+    acronproject_robot_website_LIL_107684.tgz  Ch00  Ch02  Ch04  Ch06             LICENSE  README.md
+    acronproject_robot_website_LIL_107684.zip  Ch01  Ch03  Ch05  CONTRIBUTING.md  NOTICE
 # ===================================================
-53-
-tar xvf ~/learning-nginx-2492317/Binaryville_robot_website_LIL_107684.tgz --directory /var/www/binaryville/
+# 53-
+tar xvf ~/learning-nginx-2492317/acronproject_robot_website_LIL_107684.tgz --directory /var/www/acronproject/
 # ===================================================
-54-
-ls /var/www/binaryville/
+# 54-
+ls /var/www/acronproject/
 
 # Output:
     403.html  50x.html  account  blog  checkout  humans.txt  index.html  README.rtf  shop
     404.html  about     assets   cart  contact   images      private     robots.txt  _style-guide
-# ===================================================
-Location Directive
-    server {
-        location [modifier] location_definition {
-            ...
-        location [modifier] location_definition {
-            ...
-        }
-        }
-    }
-# ===================================================
-# ===================================================
-Location Modifiers
-Modifier    Application to Location Definitions
---------    ------------------------------------
-  None      The location definition is interpreted as a prefix for the URI
-  =         The URI must be ab exact match to the location definition
-  ~         The location definition is used as a case-sensitive regular expression
-  ~*        The location definition is used as a case-insensitive regular expression
-  ^~        If the longest prefix matches, then no regular expression are checked
-# ===================================================
-# ===================================================
-
-See this file >> 016- Location Processing.png
 
 # ===================================================
-# ===================================================
-55-
+# 55-
 cd /root/learning-nginx-2492417/Ch02/02_03-configure-locations-part-2
 # ===================================================
-56-
-pwd
-
-# Output:
-    /root/learning-nginx-2492317/Ch02/02_03-configure-locations-part-2
+# 56-
 # ===================================================
-57-
-view binaryville.conf
+# 57-
 # ===================================================
-58- write this and hit Enter
-:set number
+# 58-
 # ===================================================
-59- write this and hit Enter
-:8
+# 59- 
 # ===================================================
-60- write this and hit Enter
-:11
-than
-:q
+# 60-
 # ===================================================
-61-
-cp binaryville.conf /etc/nginx/conf.d/
+# 61-
 # ===================================================
-62-
-nginx -t
-
-# Output:
-    nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-    nginx: configuration file /etc/nginx/nginx.conf test is successful
+# 62-
 # ===================================================
-63-
-systemctl reload nginx
+# 63-
 # ===================================================
-64- go to your IP/Server/Websiter , should be shows index of /mages/
-http://100.28.26.999/images/
+# 64-
 # ===================================================
-                    
-                    NGINX Logs
-                -------------------
-    Log files record various operational details
-    Access logs:
-    - Time of the request
-    - Result of the request
-    - Client IP address
-    - Client browser
-
-    Error logs:
-    - configuration errors
-    - Service stops and starts
-    - Service errors
-
-default log file configuration is in the main configuration file, nginx.conf:
-/etc/nginx/nginx.conf
-http {
-    ...
-    access_log /var/log/nginx/access.log;
-    error_log /var/log/nginx/error.log;
-    ...
-}
+# 65-
 # ===================================================
-65-
-cd /root/learning-nginx-2492317/Ch02/02_04-configure-logs
+# 66-
 # ===================================================
-66-
-pwd
-
-# Output:
-    /root/learning-nginx-2492317/Ch02/02_04-configure-logs
+# 67-
 # ===================================================
-67-
-view binaryville.conf
+# 68-
 # ===================================================
-68-
-:set number
-than Enter
-:8
-than Enter
-:21
-than Enter
-:q
-than Enter
+# 69-
 # ===================================================
-69-
-cp binaryville.conf /etc/nginx/conf.d/
+# 70-
 # ===================================================
-70-
-ls /etc/nginx/conf.d/
-
-# Output:
-    binaryville.conf
+# 71-
 # ===================================================
-71-
-nginx -t
-
-# Output:
-    nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-    nginx: configuration file /etc/nginx/nginx.conf test is successful
+# 72- 
 # ===================================================
-72- 
-systemctl reload nginx
+# 73-
 # ===================================================
-73-
-cd /var/log/nginx
+# 74-
 # ===================================================
-74-
-pwd
-
-# Output:
-    /var/log/nginx
+# 75-
 # ===================================================
-75-
-ls
-
-# Output:
-    access.log                    binaryville.local.error.log          binaryville.local.images.error.log
-    binaryville.local.access.log  binaryville.local.images.access.log  error.log
+# 76-
 # ===================================================
-76-
-for i in {1..10}; do curl localhost > /dev/null; done
-
-# Output:
-      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                     Dload  Upload   Total   Spent    Left  Speed
-    100 29987  100 29987    0     0  4679k      0 --:--:-- --:--:-- --:--:-- 5856k
-      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-    ...
-    ...
+# 77-
 # ===================================================
-77-
-cat binaryville.local.access.log
-
-# Output:
-    127.0.0.1 - - [13/Feb/2024:07:13:32 +0000] "GET / HTTP/1.1" 200 29987 "-" "curl/7.81.0"
-    127.0.0.1 - - [13/Feb/2024:07:13:32 +0000] "GET / HTTP/1.1" 200 29987 "-" "curl/7.81.0"
-    ...
-    ...
+# 78-
 # ===================================================
-78-
-for i in {1..10}; do curl localhost/images/ > /dev/null; done
-
-# Output:
-      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                     Dload  Upload   Total   Spent    Left  Speed
-    100  2338    0  2338    0     0   371k      0 --:--:-- --:--:-- --:--:--  456k
-    ...
-    ...
+# 79-
 # ===================================================
-79-
-cat binaryville.local.images.access.log
-
-# Output:
-    127.0.0.1 - - [13/Feb/2024:07:43:07 +0000] "GET /images/ HTTP/1.1" 200 2350 "-" "curl/7.81.0"
-    127.0.0.1 - - [13/Feb/2024:07:43:07 +0000] "GET /images/ HTTP/1.1" 200 2350 "-" "curl/7.81.0"
-    ...
-    ...
+# 80-
 # ===================================================
-
-                Troubleshoot NGINX
-
-Check for Configuration File Errors
-nginx -t
-
-Check NGINX Status and Reload the Configuration
-systemctl status nginx
-# systemctl reload nginx    => without any output, which means OK
-
-Check the Ports
-if NGINX is up and running but you aren't seeing anything served, you'll want to check to make sure that the standard ports for web traffic are open, ports 80 and 443.
-COMMANDS for checking ports:
-    sudo lsof -i :80 -i :443 | grep nginx
-    OR
-    sudo apt install net-tools
-    sudo netstat -plan | grep nginx
-    OR
-Tail the Logs
-    tail -f /var/logs/nginx/*.log
+# 81-
 # ===================================================
-80-
-sudo lsof -i :80 -i :443 | grep nginx
-
-# Output:
-    nginx   1234     root    8u  IPv4  2342      0t0  TCP *:http (LISTEN)
-    nginx   1234 www-data    8u  IPv4  2342      0t0  TCP *:http (LISTEN)
+# 82-
 # ===================================================
-81-
-sudo apt install net-tools
-than
-sudo netstat -plan | grep nginx
-
-# Output:
-    tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      2341/nginx: master  
-    unix  3      [ ]         STREAM     CONNECTED     987621    2341/nginx: master   
-    unix  3      [ ]         STREAM     CONNECTED     987621    2341/nginx: master  
+# 83-
 # ===================================================
-
-        Customize an NGINX Configuration
-        -------------------------------------
-        1. Remove the default NGINX configuration
-        2. Add the following file below to the correct location on the server.
-        3. Update the confguration to include a location for /complete that is only served on exact matches
-        4. Update the location to use custom logging to a file named complete.access.log in the default logging locaiton for NGINX.
-        5. Validate the custom location by browsing to the DNS for your server using the route /complete. For example, http://example.com/complete.
-        6. Validate the custom logging by viewing the contents of the log file in /var/log/nginx/.
-
+# 84-
 # ===================================================
-82-
-cd /etc/nginx/sites-enabled/
-than:
-pwd
-
-# Output:
-    /etc/nginx/sites-enabled
+# 85-
 # ===================================================
-83-
-ls -ltr
-
-# Output: (should be nothing) IF is like this
-    default -> /etc/nginx/sites-available/default
-
-So do this:
-unlink default
-
-again:
-ls -ltr
-
-# Output: should be nothing
+# 86-
 # ===================================================
-84-
-cd ../
+# 87-
 # ===================================================
-85-
-cd conf.d/
+# 88-
 # ===================================================
-86-
-vim complete.conf
+# 89-
 # ===================================================
-87-
-hit I key
+# 90-
 # ===================================================
-88- Paste this in complete.conf
-server {
-    listen 80 default_server;
-    listen [::]:80;
-
-    ________ADD_THE_CUSTOM_LOCATION_HERE________ {
-
-        # The `access_log` directive tells NGINX where to write logs for the
-        # context containing the directive.
-        # Check out the following URL for more details:
-        # http://nginx.org/en/docs/http/ngx_http_log_module.html#access_log
-        access_log ________ADD_THE_CUSTOM_LOG_FILE_HERE________;
-
-        # The `return` directive tells NGINX to stop processing and return
-        # the specified code along with an optional response.
-        # Check out the following URL for more details:
-        # http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#return
-        return 200 '{"Message": "Your request is complete."}\n';
-
-        # The `default_type` directive helps NGINX tell clients
-        # how to interpret the content of a response.
-        # Check out the following URL for more details:
-        # http://nginx.org/en/docs/http/ngx_http_core_module.html#default_type
-        default_type text/json;
-    }
-}
+# 91-
 # ===================================================
-89- Change this line
-________ADD_THE_CUSTOM_LOCATION_HERE________ {
-
-With:
-location = /complete {
+# 92-
 # ===================================================
-90- Change this line
-access_log ________ADD_THE_CUSTOM_LOG_FILE_HERE________;
-
-with: (without insert mode you can use X key for delete characters)
-access_log /var/log/nginx/complete.access.log;
+# 93-
 # ===================================================
-91-
-Esc 
-than
-:w and Enter(return) = save and don't out
+# 94-
 # ===================================================
-92-
-:wq
-than
-Enter (return)
+# 95-
 # ===================================================
-93-
-nginx -t
-
-# Output:
-    nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-    nginx: configuration file /etc/nginx/nginx.conf test is successful
+# 96-
 # ===================================================
-94-
-systemctl reload nginx
-
-# If Output:
-    nginx.service is not active, cannot reload.
-
-than
-systemctl start nginx
-
-than
-systemctl reload nginx
+# 97-
 # ===================================================
-95-
-systemctl status nginx
-
-# Output:
-    ● nginx.service - A high performance web server and a reverse proxy server
-         Loaded: loaded (/lib/aa/ff/nginx.service; enabled; vendor preset: enabled)
-         Active: active (running) since Tue 2050!-30!-30 10:27:16 UTU; 1Century 25s ago!!
+# 98-
 # ===================================================
-96- go to this link
-https://(www).IP-DNS-DomainNameServer/complete
-
-# Output: should be see
-    {"Message": "Your request is complete."}
+# 99-
 # ===================================================
-97-
-cd /var/log/nginx/
+# 100-
 # ===================================================
-98-
-ls
-
-# Output:
-    access.log  error.log   complete.access.log
+# 101-
 # ===================================================
-99-
-cat complete.access.log
-
-# Output:
-    123.213.103.133 - - [13/Feb/2034!:10:34:03 +0000] "GET /complete HTTP/1.1" 200 41 "-" "Mozilla/3.0 (X10; Win10; Windows x123; rv:122.0) XXX/0192801 Firefox/300.0"
+# 102-
 # ===================================================
-
-            a proxy and load balancer
-            -------------------------
-        Reverse proxies and load balancing
-
-See ->  023-Reverse proxies and load balancing.png
-
-See ->  024-Load Balancer.png
-        025-Load Balancer.png
-        
-
-Defines groups os servers that can be references by other directives
-e.g
-upstream example {
-    server a.example.com:8001;
-    server bb.example.com:8002;
-}
-
-more information:
-https://www.nginx.org/en/docs/http/ngx_http_upstream_module.html
-
-NGINX Configuration Contexts
-global context
-    http {
-        server {
-            location {
-
-            }
-        }
-    }
-
-upstream example:
-http {
-    upstream example {
-        ...
-        ...
-    }
-    server {
-        location {
-            proxy_pass http://example;
-        }
-    }
-}
-
+# 103-
 # ===================================================
-100-
-cd /root/learning-nginx-2492317/Ch03/03_03-configure-nginx-as-a-reverse-proxy
+# 104-
 # ===================================================
-101-
-pwd
-
-# Output:
-    /root/learning-nginx-2492317/Ch03/03_03-configure-nginx-as-a-reverse-proxy
+# 105-
 # ===================================================
-102-
-ls
-
-# Output:
-    binaryville.conf  README.md  start_app_servers.py
+# 106-
 # ===================================================
-103-
-view start_app_servers.py
-
-# Output:
-    #!/usr/bin/env python4
-    '''Module: Starts three HTTP servers'''
-    import os
-    ...
-    ...
-    ...
-# ===================================================
-104-
-cp binaryville.conf /etc/nginx/conf.d/
-# ===================================================
-105-
-nginx -t
-
-# Output:
-    nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-    nginx: configuration file /etc/nginx/nginx.conf test is successful
-# ===================================================
-106-
-# ===================================================
-107-
-systemctl reload nginx
+# 107-
 # ===================================================
 # ===================================================
 # ===================================================
