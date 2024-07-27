@@ -14,6 +14,7 @@
 
     # Update your package list and install Nginx:
 sudo apt update
+sudo apt upgrade
 sudo apt install nginx
 
     # Start and enable Nginx to run on boot:
