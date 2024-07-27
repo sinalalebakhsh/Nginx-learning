@@ -143,6 +143,16 @@ server {
 
 
 
+# CHECK git was Installed
+git --version
+git version 2.43.0
+cd /home/
+mkdir sina
+cd sina/
+mkdir django
+cd django/
+root@XXX-XXXX:/home/sina/djangoX#
+
 
 
 
