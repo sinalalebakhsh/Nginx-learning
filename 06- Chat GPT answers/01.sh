@@ -17,7 +17,7 @@ sudo apt update
 sudo apt upgrade
     # If connection wil be lost
     sudo dpkg --configure -a
-    
+
 sudo apt install nginx
 
     # Start and enable Nginx to run on boot:
@@ -51,8 +51,8 @@ server {
 
     # Create the document root directory and an index file:
 sudo mkdir -p /var/www/acronproject.com
-sudo nano /var/www/acronproject.com/index.html
 
+sudo nano /var/www/acronproject.com/index.html
     # Add some basic HTML content to the index file for testing:
 <!DOCTYPE html>
 <html lang="en">
@@ -85,6 +85,22 @@ http://acronproject.com
 
 
 
+# ==============================================
+# ==============================================
+# ==============================================
+
+
+# Install Docker and Docker Compose:
+
+    # Update your package list and install Docker:
+sudo apt update
+sudo apt install docker.io
+
+
+
+    # tart and enable Docker to run on boot:
+sudo systemctl start docker
+sudo systemctl enable docker
 
 
 
