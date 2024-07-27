@@ -155,8 +155,16 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
+# Collect static files:
+docker-compose run web python manage.py collectstatic
 
+# Run Your Docker Compose Setup:
+    # Navigate to your project directory where your docker-compose.yml is located.
+    # Start your Docker containers:
+sudo docker-compose up -d
 
+# Verify the Setup:
+# Open your web browser and navigate to http://acronproject.com.
 
 
 # CHECK git was Installed
