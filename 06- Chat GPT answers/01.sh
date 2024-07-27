@@ -15,6 +15,9 @@
     # Update your package list and install Nginx:
 sudo apt update
 sudo apt upgrade
+    # If connection wil be lost
+    sudo dpkg --configure -a
+    
 sudo apt install nginx
 
     # Start and enable Nginx to run on boot:
