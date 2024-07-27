@@ -203,8 +203,9 @@ sudo certbot --nginx -d acronproject.com -d www.acronproject.com
 # Update Nginx Configuration:
 sudo nano /etc/nginx/sites-available/acronproject.com
 # Ensure the configuration looks something like this:
-# 
-# Replace /path/to/your/staticfiles and /path/to/your/mediafiles with the actual paths to your static and media files.
+# 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇
+# Replace /path/to/your/staticfiles and /path/to/your/mediafiles with the 
+# actual paths to your static and media files.
 
 server {
     listen 80;
@@ -268,6 +269,13 @@ server {
 
 
 
+# Reload Nginx:
+sudo systemctl reload nginx
+
+# Set Up Auto-Renewal:
+    # Certbot sets up a cron job for automatic renewal. 
+    # To check the auto-renewal process, you can run:
+sudo certbot renew --dry-run
 
 
 
