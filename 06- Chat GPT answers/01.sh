@@ -110,6 +110,36 @@ docker-compose --version
 # ==============================================
 # ==============================================
 # ==============================================
+
+# CHECK git was Installed
+git --version
+git version 2.43.0
+cd /home/
+mkdir sina
+cd sina/
+mkdir django
+cd django/
+root@XXX-XXXX:/home/sina/django#
+
+# CLONE 
+git clone https://github.com/sinalalebakhsh/OnlineShope.git
+
+
+
+
+
+
+
+
+
+
+
+# ==============================================
+# ==============================================
+# ==============================================
+
+
+
 # Set Up Docker for Your Django Application:
 
 # Configure Nginx as a Reverse Proxy:
@@ -150,18 +180,6 @@ sudo systemctl reload nginx
 
 
 
-# CHECK git was Installed
-git --version
-git version 2.43.0
-cd /home/
-mkdir sina
-cd sina/
-mkdir django
-cd django/
-root@XXX-XXXX:/home/sina/django#
-
-# CLONE 
-git clone https://github.com/sinalalebakhsh/OnlineShope.git
 
 
 
