@@ -37,7 +37,7 @@ sudo nano /etc/nginx/sites-available/acronproject.com
     # Add the following configuration to the file:
 server {
     listen 80;
-    server_name acronproject.com www.acronproject.com;
+    server_name acronproject.com www.acronproject.com 154.16.16.239;
 
     root /var/www/acronproject.com;
     index index.html index.htm;
@@ -124,7 +124,7 @@ root@XXX-XXXX:/home/sina/django#
 # CLONE 
 git clone https://github.com/sinalalebakhsh/OnlineShope.git
 
-
+cd OnlineShope/
 
 
 
@@ -138,7 +138,9 @@ git clone https://github.com/sinalalebakhsh/OnlineShope.git
 # ==============================================
 # ==============================================
 
-
+pwd
+# COPY
+/home/sina/django/OnlineShope
 
 # Set Up Docker for Your Django Application:
 
@@ -168,6 +170,23 @@ server {
 }
 
 
+server {
+    listen 80;
+    server_name 0.0.0.0 localhost;
+
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location /static/ {
+        alias /home/sina/django/OnlineShope/static;
+    }
+}
+
     # Enable the new configuration by creating a symbolic link:
 sudo ln -s /etc/nginx/sites-available/acronproject.com /etc/nginx/sites-enabled/
     # Test the Nginx configuration for syntax errors:
@@ -175,12 +194,6 @@ sudo nginx -t
 
     # Reload Nginx to apply the changes:
 sudo systemctl reload nginx
-
-
-
-
-
-
 
 
 # Ensure your Django application is set up to serve static and media files.
